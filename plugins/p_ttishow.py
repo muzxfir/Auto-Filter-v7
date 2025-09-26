@@ -13,16 +13,16 @@ import logging
 from time import time
 from bot import botStartTime
 
-"""-----------------------------------------https://t.me/dreamxbotz--------------------------------------"""
+"""-----------------------------------------https://t.me/tgezbotz--------------------------------------"""
 
 @Client.on_message(filters.new_chat_members & filters.group)
 async def save_group(bot, message):
-    dreamx_check = [u.id for u in message.new_chat_members]
-    if temp.ME in dreamx_check:
+    tge_check = [u.id for u in message.new_chat_members]
+    if temp.ME in tge_check:
         if not await db.get_chat(message.chat.id):
             total=await bot.get_chat_members_count(message.chat.id)
-            dreamx_botz = message.from_user.mention if message.from_user else "Anonymous" 
-            await bot.send_message(LOG_CHANNEL, script.LOG_TEXT_G.format(message.chat.title, message.chat.id, total, dreamx_botz))       
+            tge_botz = message.from_user.mention if message.from_user else "Anonymous" 
+            await bot.send_message(LOG_CHANNEL, script.LOG_TEXT_G.format(message.chat.title, message.chat.id, total, tge_botz))       
             await db.add_chat(message.chat.id, message.chat.title)
         if message.chat.id in temp.BANNED_CHATS:
 
@@ -271,7 +271,7 @@ async def unban_a_user(bot, message):
     
 @Client.on_message(filters.command('users') & filters.user(ADMINS))
 async def list_users(bot, message):
-    dreamxbotz = await message.reply('Getting List Of Users')
+    tgezbotz = await message.reply('Getting List Of Users')
     users = await db.get_all_users()
     out = "Users Saved In DB Are:\n\n"
     async for user in users:
@@ -280,7 +280,7 @@ async def list_users(bot, message):
             out += '( Banned User )'
         out += '\n'
     try:
-        await dreamxbotz.edit_text(out)
+        await tgezbotz.edit_text(out)
     except MessageTooLong:
         with open('users.txt', 'w+') as outfile:
             outfile.write(out)
@@ -288,7 +288,7 @@ async def list_users(bot, message):
 
 @Client.on_message(filters.command('chats') & filters.user(ADMINS))
 async def list_chats(bot, message):
-    dreamxbotz = await message.reply('Getting List Of chats')
+    tgezbotz = await message.reply('Getting List Of chats')
     chats = await db.get_all_chats()
     out = "Chats Saved In DB Are:\n\n"
     async for chat in chats:
@@ -297,7 +297,7 @@ async def list_chats(bot, message):
             out += '( Disabled Chat )'
         out += '\n'
     try:
-        await dreamxbotz.edit_text(out)
+        await tgezbotz.edit_text(out)
     except MessageTooLong:
         with open('chats.txt', 'w+') as outfile:
             outfile.write(out)
