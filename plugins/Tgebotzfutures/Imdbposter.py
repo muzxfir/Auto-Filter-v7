@@ -4,7 +4,7 @@ import warnings
 import logging
 from io import BytesIO
 from PIL import Image
-from info import DREAMXBOTZ_IMAGE_FETCH, TMDB_API_KEY
+from info import TGEBOTZ_IMAGE_FETCH, TMDB_API_KEY
 from imdb import Cinemagoer
 
 
@@ -24,7 +24,7 @@ def list_to_str(lst):
 Image.MAX_IMAGE_PIXELS = None
 warnings.simplefilter("ignore", Image.DecompressionBombWarning)
 async def fetch_image(url, size=(860, 1200)):
-    if not DREAMXBOTZ_IMAGE_FETCH:
+    if not TGEBOTZ_IMAGE_FETCH:
         logger.info("Image fetching is disabled.")
         return None
 
