@@ -295,7 +295,7 @@ def unpack_new_file_id(new_file_id):
     return file_id, file_ref
 
 
-async def dreamxbotz_fetch_media(limit: int) -> List[dict]:
+async def tgebotz_fetch_media(limit: int) -> List[dict]:
     try:
         if MULTIPLE_DB:
             db_size = await check_db_size(Media)
@@ -307,11 +307,11 @@ async def dreamxbotz_fetch_media(limit: int) -> List[dict]:
         files = await cursor.to_list(length=limit)
         return files
     except Exception as e:
-        logger.error(f"Error in dreamxbotz_fetch_media: {e}")
+        logger.error(f"Error in tgebotz_fetch_media: {e}")
         return []
 
 
-async def dreamxbotz_clean_title(filename: str, is_series: bool = False) -> str:
+async def tgebotz_clean_title(filename: str, is_series: bool = False) -> str:
     try:
         year_match = re.search(r"^(.*?(\d{4}|\(\d{4}\)))", filename, re.IGNORECASE)
         if year_match:
@@ -361,21 +361,21 @@ async def dreamxbotz_clean_title(filename: str, is_series: bool = False) -> str:
         return filename
 
 
-async def dreamxbotz_get_movies(limit: int = 20) -> List[str]:
+async def tgebotz_get_movies(limit: int = 20) -> List[str]:
     try:
-        cursor = await dreamxbotz_fetch_media(limit * 2)
+        cursor = await tgebotz_fetch_media(limit * 2)
         results = set()
         pattern = r"(?:s\d{1,2}|season\s*\d+|season\d+)(?:\s*combined)?(?:e\d{1,2}|episode\s*\d+)?\b"
         for file in cursor:
             file_name = getattr(file, "file_name", "")
             if not re.search(pattern, file_name, re.IGNORECASE):
-                title = await dreamxbotz_clean_title(file_name)
+                title = await tgebotz_clean_title(file_name)
                 results.add(title)
             if len(results) >= limit:
                 break
         return sorted(list(results))[:limit]
     except Exception as e:
-        logger.error(f"Error in dreamxbotz_get_movies: {e}")
+        logger.error(f"Error in tgrbotz_get_movies: {e}")
         return []
 
 
