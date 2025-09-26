@@ -379,16 +379,16 @@ async def tgebotz_get_movies(limit: int = 20) -> List[str]:
         return []
 
 
-async def dreamxbotz_get_series(limit: int = 30) -> Dict[str, List[int]]:
+async def tgebotz_get_series(limit: int = 30) -> Dict[str, List[int]]:
     try:
-        cursor = await dreamxbotz_fetch_media(limit * 5)
+        cursor = await tgebotz_fetch_media(limit * 5)
         grouped = defaultdict(list)
         pattern = r"(.*?)(?:S(\d{1,2})|Season\s*(\d+)|Season(\d+))(?:\s*Combined)?(?:E(\d{1,2})|Episode\s*(\d+))?\b"
         for file in cursor:
             file_name = getattr(file, "file_name", "")
             match = re.search(pattern, file_name, re.IGNORECASE)
             if match:
-                title = await dreamxbotz_clean_title(match.group(1), is_series=True)
+                title = await tgebotz_clean_title(match.group(1), is_series=True)
                 season = int(match.group(2) or match.group(3) or match.group(4))
                 grouped[title].append(season)
         return {
@@ -397,5 +397,5 @@ async def dreamxbotz_get_series(limit: int = 30) -> Dict[str, List[int]]:
             if seasons
         }
     except Exception as e:
-        logger.error(f"Error in dreamxbotz_get_series: {e}")
+        logger.error(f"Error in tgebotz_get_series: {e}")
         return []
