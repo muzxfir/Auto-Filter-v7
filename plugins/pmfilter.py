@@ -1,7 +1,7 @@
 from utils import get_size, is_subscribed, is_req_subscribed, group_setting_buttons, get_poster, temp, get_settings, save_group_settings, get_cap, imdb, is_check_admin, extract_request_content, log_error, clean_filename, generate_season_variations, clean_search_text
 import tracemalloc
 from fuzzywuzzy import process
-from tgezbotz.util.file_properties import get_name, get_hash
+from tgebotz.util.file_properties import get_name, get_hash
 from urllib.parse import quote_plus
 import logging
 from database.ia_filterdb import Media, Media2, get_file_details, get_search_results, get_bad_files
@@ -295,7 +295,7 @@ async def next_page(bot, query):
             timedelta(hours=curr_time.hour, minutes=curr_time.minute, seconds=(
                 curr_time.second+(curr_time.microsecond/1000000)))
         remaining_seconds = "{:.2f}".format(time_difference.total_seconds())
-        dreamx_title = clean_search_text(search)
+        tge_title = clean_search_text(search)
         cap = await get_cap(settings, remaining_seconds, files, query, total, dreamx_title, offset+1)
         try:
             await query.message.edit_text(text=cap, reply_markup=InlineKeyboardMarkup(btn), disable_web_page_preview=True)
@@ -482,7 +482,7 @@ async def filter_qualities_cb_handler(client: Client, query: CallbackQuery):
             timedelta(hours=curr_time.hour, minutes=curr_time.minute, seconds=(
                 curr_time.second+(curr_time.microsecond/1000000)))
         remaining_seconds = "{:.2f}".format(time_difference.total_seconds())
-        dreamx_title = clean_search_text(search)
+        tge_title = clean_search_text(search)
         cap = await get_cap(settings, remaining_seconds, files, query, total_results, dreamx_title, offset=1)
         try:
             await query.message.edit_text(text=cap, reply_markup=InlineKeyboardMarkup(btn), disable_web_page_preview=True)
@@ -637,7 +637,7 @@ async def filter_languages_cb_handler(client: Client, query: CallbackQuery):
             timedelta(hours=curr_time.hour, minutes=curr_time.minute, seconds=(
                 curr_time.second+(curr_time.microsecond/1000000)))
         remaining_seconds = "{:.2f}".format(time_difference.total_seconds())
-        dreamx_title = clean_search_text(search)
+        tge_title = clean_search_text(search)
         cap = await get_cap(settings, remaining_seconds, files, query, total_results, dreamx_title, offset=1)
         try:
             await query.message.edit_text(text=cap, reply_markup=InlineKeyboardMarkup(btn), disable_web_page_preview=True)
@@ -775,8 +775,8 @@ async def filter_seasons_cb_handler(client: Client, query: CallbackQuery):
             seconds=curr_time.second + curr_time.microsecond / 1_000_000,
         )
         remaining_seconds = f"{time_difference.total_seconds():.2f}"
-        dreamx_title = clean_search_text(search_final)
-        cap = await get_cap(settings, remaining_seconds, files, query, total_results, dreamx_title, offset=1)
+        tge_title = clean_search_text(search_final)
+        cap = await get_cap(settings, remaining_seconds, files, query, total_results, tge_title, offset=1)
         try:
             await query.message.edit_text(
                 text=cap,
@@ -795,7 +795,7 @@ async def filter_seasons_cb_handler(client: Client, query: CallbackQuery):
 
 @Client.on_callback_query()
 async def cb_handler(client: Client, query: CallbackQuery):
-    DreamxData = query.data
+    TgeData = query.data
     try:
         link = await client.create_chat_invite_link(int(REQST_CHANNEL))
     except:
@@ -1344,15 +1344,15 @@ async def cb_handler(client: Client, query: CallbackQuery):
         else:
             await query.answer("Yᴏᴜ ᴅᴏɴ'ᴛ ʜᴀᴠᴇ ᴘᴇʀᴍɪssɪᴏɴ ᴛᴏ sᴇᴇ ᴛʜɪꜱ ❌", show_alert=True)
 
-    elif DreamxData.startswith("generate_stream_link"):
-        _, file_id = DreamxData.split(":")
+    elif TgeData.startswith("generate_stream_link"):
+        _, file_id = TgeData.split(":")
         try:
             user_id = query.from_user.id
             username = query.from_user.mention
             log_msg = await client.send_cached_media(chat_id=BIN_CHANNEL, file_id=file_id,)
             fileName = {quote_plus(get_name(log_msg))}
-            dreamx_stream = f"{URL}watch/{str(log_msg.id)}/{quote_plus(get_name(log_msg))}?hash={get_hash(log_msg)}"
-            dreamx_download = f"{URL}{str(log_msg.id)}/{quote_plus(get_name(log_msg))}?hash={get_hash(log_msg)}"
+            tge_stream = f"{URL}watch/{str(log_msg.id)}/{quote_plus(get_name(log_msg))}?hash={get_hash(log_msg)}"
+            tge_download = f"{URL}{str(log_msg.id)}/{quote_plus(get_name(log_msg))}?hash={get_hash(log_msg)}"
             xo = await query.message.reply_text(f'💘')
             await asyncio.sleep(1)
             await xo.delete()
@@ -1360,14 +1360,14 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 text=f"•• ʟɪɴᴋ ɢᴇɴᴇʀᴀᴛᴇᴅ ꜰᴏʀ ɪᴅ #{user_id} \n•• ᴜꜱᴇʀɴᴀᴍᴇ : {username} \n\n•• ᖴᎥᒪᗴ Nᗩᗰᗴ : {fileName}",
                 quote=True,
                 disable_web_page_preview=True,
-                reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("🚀 Fast Download 🚀", url=dreamx_download),  # we download Link
-                                                    InlineKeyboardButton('🖥️ Watch online 🖥️', url=dreamx_stream)]])  # web stream Link
+                reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("🚀 Fast Download 🚀", url=tge_download),  # we download Link
+                                                    InlineKeyboardButton('🖥️ Watch online 🖥️', url=tge_stream)]])  # web stream Link
             )
-            dreamcinezone = await query.edit_message_reply_markup(
+            tgecinezone = await query.edit_message_reply_markup(
                 reply_markup=InlineKeyboardMarkup([
                     [
-                        InlineKeyboardButton("🚀 Download ", url=dreamx_download),
-                        InlineKeyboardButton('🖥️ Watch ', url=dreamx_stream)
+                        InlineKeyboardButton("🚀 Download ", url=tge_download),
+                        InlineKeyboardButton('🖥️ Watch ', url=tge_stream)
                     ],
                     [
                         InlineKeyboardButton('📌 ᴊᴏɪɴ ᴜᴘᴅᴀᴛᴇꜱ ᴄʜᴀɴɴᴇʟ 📌', url=UPDATE_CHNL_LNK)
@@ -1375,7 +1375,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 ])
             )
             await asyncio.sleep(DELETE_TIME)
-            await dreamcinezone.delete()
+            await tgecinezone.delete()
             return
         except Exception as e:
             print(e)
@@ -1385,7 +1385,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         
     elif query.data == "prestream":
         await query.answer(text=script.PRE_STREAM_ALERT, show_alert=True)
-        dreamcinezone = await client.send_photo(
+        tgecinezone = await client.send_photo(
             chat_id=query.message.chat.id,
             photo="https://i.ibb.co/whf8xF7j/photo-2025-07-26-10-42-46-7531339305176793100.jpg", 
             caption=script.PRE_STREAM,
@@ -1394,7 +1394,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             ])
         )
         await asyncio.sleep(DELETE_TIME)
-        await dreamcinezone.delete()
+        await tgecinezone.delete()
 
 
     elif query.data == "pagesn1":
@@ -1456,7 +1456,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InputMediaPhoto('https://graph.org/file/99eebf5dbe8a134f548e0.jpg')
         )
         await query.message.edit_text(
-            text=script.DREAMXBOTZ_DONATION.format(query.from_user.mention, QR_CODE, OWNER_UPI_ID),
+            text=script.TGEBOTZ_DONATION.format(query.from_user.mention, QR_CODE, OWNER_UPI_ID),
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
         )
@@ -1631,8 +1631,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
             return await query.answer(script.NT_ADMIN_ALRT_TXT, show_alert=True)
 
         btn = await group_setting_buttons(int(grp_id))
-        dreamx = await client.get_chat(int(grp_id))
-        await query.message.edit(text=f"ᴄʜᴀɴɢᴇ ʏᴏᴜʀ ɢʀᴏᴜᴘ ꜱᴇᴛᴛɪɴɢꜱ ✅\nɢʀᴏᴜᴘ ɴᴀᴍᴇ - '{dreamx.title}'</b>⚙", reply_markup=InlineKeyboardMarkup(btn))
+        tge = await client.get_chat(int(grp_id))
+        await query.message.edit(text=f"ᴄʜᴀɴɢᴇ ʏᴏᴜʀ ɢʀᴏᴜᴘ ꜱᴇᴛᴛɪɴɢꜱ ✅\nɢʀᴏᴜᴘ ɴᴀᴍᴇ - '{tge.title}'</b>⚙", reply_markup=InlineKeyboardMarkup(btn))
 
     elif query.data.startswith("removegrp"):
         user_id = query.from_user.id
