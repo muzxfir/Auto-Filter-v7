@@ -207,7 +207,7 @@ async def premium_button(client, callback_query: CallbackQuery):
                     chat_id=callback_query.message.chat.id,
                     title="Premium Subscription",
                     description=f"Pay {amount} Star And Get Premium For {STAR_PREMIUM_PLANS[amount]}",
-                    payload=f"dreamxpremium_{amount}",
+                    payload=f"tgepremium_{amount}",
                     currency="XTR",
                     prices=[
                         LabeledPrice(
