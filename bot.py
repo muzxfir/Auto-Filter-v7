@@ -16,9 +16,9 @@ from info import *
 from utils import temp
 from Script import script
 from plugins import web_server, check_expired_premium, keep_alive
-from dreamxbotz.Bot import dreamxbotz
-from dreamxbotz.util.keepalive import ping_server
-from dreamxbotz.Bot.clients import initialize_clients
+from tgebotz.Bot import tgebotz
+from tgebotz.util.keepalive import ping_server
+from tgebotz.Bot.clients import initialize_clients
 from PIL import Image
 Image.MAX_IMAGE_PIXELS = 500_000_000
 
@@ -38,10 +38,10 @@ ppath = "plugins/*.py"
 files = glob.glob(ppath)
 
 async def dreamxbotz_start():
-    print('\n\nInitalizing DreamxBotz')
-    await dreamxbotz.start()
-    bot_info = await dreamxbotz.get_me()
-    dreamxbotz.username = bot_info.username
+    print('\n\nInitalizing TgeBotz')
+    await tgebotz.start()
+    bot_info = await tgebotz.get_me()
+    tgebotz.username = bot_info.username
     await initialize_clients()
     for name in files:
         with open(name) as a:
@@ -53,7 +53,7 @@ async def dreamxbotz_start():
             load = importlib.util.module_from_spec(spec)
             spec.loader.exec_module(load)
             sys.modules["plugins." + plugin_name] = load
-            print("DreamxBotz Imported => " + plugin_name)
+            print("TgeBotz Imported => " + plugin_name)
     if ON_HEROKU:
         asyncio.create_task(ping_server()) 
     b_users, b_chats = await db.get_banned()
@@ -65,13 +65,13 @@ async def dreamxbotz_start():
         print("Multiple Database Mode On. Now Files Will Be Save In Second DB If First DB Is Full")
     else:
         print("Single DB Mode On ! Files Will Be Save In First Database")
-    me = await dreamxbotz.get_me()
+    me = await tgebotz.get_me()
     temp.ME = me.id
     temp.U_NAME = me.username
     temp.B_NAME = me.first_name
     temp.B_LINK = me.mention
     dreamxbotz.username = '@' + me.username
-    dreamxbotz.loop.create_task(check_expired_premium(dreamxbotz))
+    dreamxbotz.loop.create_task(check_expired_premium(tgebotz))
     logging.info(f"{me.first_name} with Pyrogram v{__version__} (Layer {layer}) started on {me.username}.")
     logging.info(LOG_STR)
     logging.info(script.LOGO)
@@ -91,7 +91,7 @@ if __name__ == '__main__':
     loop = asyncio.get_event_loop()
     while True:
         try:
-            loop.run_until_complete(dreamxbotz_start())
+            loop.run_until_complete(tgebotz_start())
             break  
         except FloodWait as e:
             print(f"FloodWait! Sleeping for {e.value} seconds.")
