@@ -325,10 +325,10 @@ async def start(client, message):
                 size = get_size(files1.file_size)
                 f_caption = files1.caption
                 settings = await get_settings(int(grp_id))
-                DREAMX_CAPTION = settings.get('caption', CUSTOM_FILE_CAPTION)
-                if DREAMX_CAPTION:
+                TGE_CAPTION = settings.get('caption', CUSTOM_FILE_CAPTION)
+                if TGE_CAPTION:
                     try:
-                        f_caption=DREAMX_CAPTION.format(file_name= '' if title is None else title, file_size='' if size is None else size, file_caption='' if f_caption is None else f_caption)
+                        f_caption=TGE_CAPTION.format(file_name= '' if title is None else title, file_size='' if size is None else size, file_caption='' if f_caption is None else f_caption)
                     except Exception as e:
                         logger.exception(e)
                         f_caption = f_caption
@@ -412,10 +412,10 @@ async def start(client, message):
             size=get_size(file.file_size)
             f_caption = f"<code>{title}</code>"
             settings = await get_settings(int(grp_id))
-            DREAMX_CAPTION = settings.get('caption', CUSTOM_FILE_CAPTION)
-            if DREAMX_CAPTION:
+            TGE_CAPTION = settings.get('caption', CUSTOM_FILE_CAPTION)
+            if TGE_CAPTION:
                 try:
-                    f_caption=DREAMX_CAPTION.format(file_name= '' if title is None else title, file_size='' if size is None else size, file_caption='')
+                    f_caption=TGE_CAPTION.format(file_name= '' if title is None else title, file_size='' if size is None else size, file_caption='')
                 except:
                     return
             await msg.edit_caption(
@@ -443,10 +443,10 @@ async def start(client, message):
     size = get_size(files.file_size)
     f_caption = files.caption
     settings = await get_settings(int(grp_id))            
-    DREAMX_CAPTION = settings.get('caption', CUSTOM_FILE_CAPTION)
-    if DREAMX_CAPTION:
+    TGE_CAPTION = settings.get('caption', CUSTOM_FILE_CAPTION)
+    if TGE_CAPTION:
         try:
-            f_caption=DREAMX_CAPTION.format(file_name= '' if title is None else title, file_size='' if size is None else size, file_caption='' if f_caption is None else f_caption)
+            f_caption=TGE_CAPTION.format(file_name= '' if title is None else title, file_size='' if size is None else size, file_caption='' if f_caption is None else f_caption)
         except Exception as e:
             logger.exception(e)
             f_caption = f_caption
@@ -1352,7 +1352,7 @@ async def set_fsub(client, message):
 @Client.on_message(filters.private & filters.command("resetallgroup") & filters.user(ADMINS))
 async def reset_all_settings(client, message):
     try:
-        reset_count = await db.dreamx_reset_settings()
+        reset_count = await db.tge_reset_settings()
         await message.reply_text(
             f"<b>ꜱᴜᴄᴄᴇꜱꜱꜰᴜʟʟʏ ᴅᴇʟᴇᴛᴇᴅ ꜱᴇᴛᴛɪɴɢꜱ ꜰᴏʀ  <code>{reset_count}</code> ɢʀᴏᴜᴘꜱ. ᴅᴇꜰᴀᴜʟᴛ ᴠᴀʟᴜᴇꜱ ᴡɪʟʟ ʙᴇ ᴜꜱᴇᴅ ✅</b>",
             quote=True
