@@ -1,28 +1,3 @@
-<h1 align="center"><b> ʀ ᴏ ʟ ᴇ x </b></h1>
-
-<p align="center">
-  <img src="https://github.com/tgebotz/Pics/blob/main/tgebotz.jpg" alt="TgeBotz Logo">
-</p>
-
-<h1 align="center">𝓓𝓻𝓮𝓪𝓶𝔁𝓑𝓸𝓽𝔃</h1>
-
----
-
-## 👤 Owner
-
-[![Contact Developer](https://img.shields.io/static/v1?label=Contact+Developer&message=On+Telegram&color=critical)](https://t.me/Deendayal_Support_Group)
-
----
-
-<!-- > ## ⚠ <u>Under Maintenance</u> ⚠  
-> This repository is currently under maintenance. Please **DO NOT deploy** until further notice. -->
-
-## 🚀 Demo Bot
-
-
-Try the live bot here:
-
-[![Click Here](https://img.shields.io/badge/Demo%20Bot-Click%20Here-blue?style=flat&logo=telegram&labelColor=white)](https://t.me/Princess_V4_bot)
 
 ---
 
