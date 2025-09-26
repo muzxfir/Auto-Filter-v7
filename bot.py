@@ -37,7 +37,7 @@ botStartTime = time.time()
 ppath = "plugins/*.py"
 files = glob.glob(ppath)
 
-async def dreamxbotz_start():
+async def tgebotz_start():
     print('\n\nInitalizing TgeBotz')
     await tgebotz.start()
     bot_info = await tgebotz.get_me()
