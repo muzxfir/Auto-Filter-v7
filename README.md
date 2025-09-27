@@ -1,1 +1,57 @@
+# 🤖 Auto-Filter v7
 
+[![Python](https://img.shields.io/badge/Python-3.9+-blue.svg)](https://www.python.org/)  
+[![Telegram](https://img.shields.io/badge/Telegram-Bot-blue.svg)](https://t.me/BotFather)  
+[![License: AGPL v2](https://img.shields.io/badge/License-AGPL_v2-blue.svg)](LICENSE)  
+
+Auto-Filter v7 is a **powerful Telegram auto-filter bot** built with Python & Pyrogram.  
+It supports auto/manual filtering, inline search, IMDB lookups, user management, broadcast, and file indexing.  
+
+---
+
+## ✨ Features
+
+- 🔎 **Auto Filter** – Automatically filter content  
+- 📝 **Manual Filter** – Add and manage custom filters  
+- 🎬 **IMDB Search** – Get movie & TV details from IMDB  
+- ⚡ **Inline Search** – Fast inline mode content search  
+- 🖼 **Random Pics** – Send random images  
+- 📂 **Indexing System** – Index files from channels  
+- 📊 **Stats Dashboard** – Track users, chats & database  
+- 🛡 **Admin Tools** – Logs, ban/unban, broadcast, disable/enable  
+- 🔐 **User Management** – IDs, info, connect/disconnect  
+- 🗂 **File Store** – Store & share files easily  
+- ✅ **Spelling Check** – Smart spelling correction for queries  
+
+---
+
+## 🔧 Configuration
+
+Set the following environment variables:
+
+| Variable | Description |
+|----------|-------------|
+| `BOT_TOKEN` | Telegram Bot API Token (from [@BotFather](https://t.me/BotFather)) |
+| `API_ID` | Telegram API ID ([my.telegram.org](https://my.telegram.org)) |
+| `API_HASH` | Telegram API Hash ([my.telegram.org](https://my.telegram.org)) |
+| `CHANNELS` | Space-separated list of channel/group IDs or usernames |
+| `ADMINS` | Space-separated list of admin user IDs |
+| `DATABASE_URI` | MongoDB connection URI |
+| `DATABASE_NAME` | MongoDB database name |
+| `LOG_CHANNEL` | Channel ID for error logs |
+
+**Optional:**
+
+- `PICS` – Telegraph image URLs for `/start`  
+- `FILE_STORE_CHANNEL` – Channel(s) for file storage  
+
+---
+
+## 🚀 Deployment
+
+### 🔹 Local / VPS
+```bash
+git clone https://github.com/TGEBOTZ/Auto-Filter-v7.git
+cd Auto-Filter-v7
+pip3 install -U -r requirements.txt
+python3 bot.py
