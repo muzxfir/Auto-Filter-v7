@@ -1,5 +1,8 @@
 # 🤖 Auto-Filter v7
 
+![Repo Views](https://komarev.com/ghpvc/?username=TGEBOTZ&repo=Auto-Filter-v7&label=Views&color=blue&style=flat)
+
+
 [![Python](https://img.shields.io/badge/Python-3.9+-blue.svg)](https://www.python.org/)  
 [![Telegram](https://img.shields.io/badge/Telegram-Bot-blue.svg)](https://t.me/BotFather)  
 [![License: AGPL v2](https://img.shields.io/badge/License-AGPL_v2-blue.svg)](LICENSE)  
@@ -49,9 +52,9 @@ Set the following environment variables:
 
 ## 🚀 Deployment
 
-### 🔹 Local / VPS
-```bash
-git clone https://github.com/TGEBOTZ/Auto-Filter-v7.git
-cd Auto-Filter-v7
-pip3 install -U -r requirements.txt
-python3 bot.py
+### 🔹 Deploy to Koyeb
+Click below to deploy instantly on **Koyeb**:
+
+[![Deploy to Koyeb](https://www.koyeb.com/static/images/deploy/button.svg)](https://app.koyeb.com/deploy?type=git&repository=github.com/TGEBOTZ/Auto-Filter-v7&branch=main&name=auto-filter-v7)
+
+After clicking, just set your **environment variables** (`BOT_TOKEN`, `API_ID`, `API_HASH`, `DATABASE_URI`, `DATABASE_NAME`, `LOG_CHANNEL`, `CHANNELS`, `ADMINS`, etc.) and press **Deploy** 🎉
