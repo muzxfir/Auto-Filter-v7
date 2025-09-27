@@ -2,13 +2,14 @@
 
 ![Repo Views](https://komarev.com/ghpvc/?username=TGEBOTZ&repo=Auto-Filter-v7&label=Views&color=blue&style=for-the-badge)
 
+<p align="center">
+  <img src="https://graph.org/file/a5f6da40168d19a3bedb8.jpg">
+</p>
+<h1 align="center">
+  Auto Filter v7
+</h1>
 
-[![Python](https://img.shields.io/badge/Python-3.9+-blue.svg)](https://www.python.org/)  
-[![Telegram](https://img.shields.io/badge/Telegram-Bot-blue.svg)](https://t.me/BotFather)  
-[![License: AGPL v2](https://img.shields.io/badge/License-AGPL_v2-blue.svg)](LICENSE)  
-
-Auto-Filter v7 is a **powerful Telegram auto-filter bot** built with Python & Pyrogram.  
-It supports auto/manual filtering, inline search, IMDB lookups, user management, broadcast, and file indexing.  
+Check our **Demo** bot -
 
 ---
 
