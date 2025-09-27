@@ -1,6 +1,6 @@
 # 🤖 Auto-Filter v7
 
-![Repo Views](https://komarev.com/ghpvc/?username=TGEBOTZ&repo=Auto-Filter-v7&label=Views&color=blue&style=flat)
+![Repo Views](https://komarev.com/ghpvc/?username=TGEBOTZ&repo=Auto-Filter-v7&label=Views&color=blue&style=for-the-badge)
 
 
 [![Python](https://img.shields.io/badge/Python-3.9+-blue.svg)](https://www.python.org/)  
