@@ -3,7 +3,7 @@ import logging
 from info import *
 from pyrogram import Client
 from tgebotz.util.config_parser import TokenParser
-from . import multi_clients, work_loads, dreamxbotz
+from . import multi_clients, work_loads, tgebotz
 
 
 async def initialize_clients():
