@@ -1,15 +1,13 @@
-# 🤖 Auto-Filter v7
-
-![Repo Views](https://komarev.com/ghpvc/?username=TGEBOTZ&repo=Auto-Filter-v7&label=Views&color=blue&style=for-the-badge)
-
 <p align="center">
   <img src="https://files.catbox.moe/wllfrk.png">
 </p>
 <h1 align="center">
-  Auto Filter v7
+  ᴀᴜᴛᴏ-ꜰɪʟᴛᴇʀ-ᴠ7 ʙᴏᴛ
 </h1>
 
-Check our **Demo** bot -
+---
+
+![Repo Views](https://komarev.com/ghpvc/?username=TGEBOTZ&repo=Auto-Filter-v7&label=Views&color=blue&style=for-the-badge)
 
 ---
 
