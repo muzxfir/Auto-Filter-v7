@@ -51,7 +51,6 @@ Set the following environment variables:
 
 ## 🚀 Deployment
 
-### 🔹 Deploy to Koyeb
 Click below to deploy instantly on **Koyeb**:
 
 [![Deploy to Koyeb](https://www.koyeb.com/static/images/deploy/button.svg)](https://app.koyeb.com/deploy?type=git&repository=github.com/TGEBOTZ/Auto-Filter-v7&branch=main&name=auto-filter-v7)
