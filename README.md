@@ -2,7 +2,7 @@
   <img src="https://files.catbox.moe/wllfrk.png">
 </p>
 <h1 align="center">
-  ᴀᴜᴛᴏ-ꜰɪʟᴛᴇʀ-ᴠ7 ʙᴏᴛ
+  𝗔𝘂𝘁𝗼-𝗙𝗶𝗹𝘁𝗲𝗿-𝘃𝟳
 </h1>
 
 ---
