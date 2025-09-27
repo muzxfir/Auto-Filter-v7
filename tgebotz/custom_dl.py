@@ -1,15 +1,15 @@
-#Thanks @dreamxbotz for helping in this journey 
+#Thanks for helping in this journey 
 import math
 import asyncio
 import logging
 from info import *
 from typing import Dict, Union
-from dreamxbotz.Bot import work_loads
+from tgebotz.Bot import work_loads
 from pyrogram import Client, utils, raw
 from .file_properties import get_file_ids
 from pyrogram.session import Session, Auth
 from pyrogram.errors import AuthBytesInvalid
-from dreamxbotz.server.exceptions import FIleNotFound
+from tgebotz.server.exceptions import FIleNotFound
 from pyrogram.file_id import FileId, FileType, ThumbnailSource
 
 
@@ -27,7 +27,7 @@ class ByteStreamer:
             yield_file: yield a file from telegram servers for streaming.
             
         This is a modified version of the <https://github.com/eyaadh/megadlbot_oss/blob/master/mega/telegram/utils/custom_download.py>
-        Thanks to Eyaadh <https://github.com/eyaadh>
+        Thanks to muzxfir <https://github.com/muzxfir>
         """
         self.clean_timer = 30 * 60
         self.client: Client = client
