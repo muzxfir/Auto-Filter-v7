@@ -216,7 +216,11 @@ Nᴀᴍᴇ : {}
 
 Mᴇꜱꜱᴀɢᴇ : <b>{}</b>"""
     
-    CAPTION = """<b><a href="https://t.me/tgebotz">{file_name}</a></b>\n\n<b>⚜️ Powered By : <a href="https://t.me/tgebotz">[ ᴛɢᴇʙᴏᴛᴢ ]</a></b>"""
+    CAPTION = """
+📂 File: `{file_name}`
+
+🤖 Uploaded by: **{BOT_NAME}**
+🕒 Time: `{now}`"""
 
     
     MOVIE_UPDATE_NOTIFY_TXT = """
