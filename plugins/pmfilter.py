@@ -876,7 +876,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 logger.exception(e)
             f_caption = f_caption
         if f_caption is None:
-            f_caption = f"{files.file_name}"
+            f_caption = f"🎬 <code>{files.file_name}</code>\n 🗃️ {file_size}\n"
         await query.answer(url=f"href='https://telegram.me/{temp.U_NAME}?start=file_{query.message.chat.id}_{file.file_id}")
 
     elif query.data.startswith("autofilter_delete"):
