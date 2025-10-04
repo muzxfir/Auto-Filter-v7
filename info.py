@@ -199,7 +199,7 @@ BAD_WORDS = {
 # ============================
 # Server & Web Configuration
 # ============================
-
+PING_URL = environ.get("PING_URL", "https://your-app-name.koyeb.app")
 NO_PORT = bool(environ.get('NO_PORT', False))
 APP_NAME = None
 if 'DYNO' in environ:
