@@ -218,7 +218,7 @@ Mᴇꜱꜱᴀɢᴇ : <code>{}</code>"""
     
     CAPTION = """`📁 {file_name}`/n
 `💾 {file_size}` /n/n
-`🤖 Uploaded by` {BOT_NAME}"""
+`🤖 Uploaded by` @srsuggestionsmc"""
 
     
     MOVIE_UPDATE_NOTIFY_TXT = """
