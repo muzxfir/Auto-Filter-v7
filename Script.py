@@ -216,8 +216,8 @@ Nᴀᴍᴇ : {}
 
 Mᴇꜱꜱᴀɢᴇ : <code>{}</code>"""
     
-    CAPTION = """`📁 {file_name}`/n
-`💾 {file_size}` /n/n
+    CAPTION = """`📁 {file_name}`\n
+`💾 {file_size}` \n\n
 `🤖 Uploaded by` @srsuggestionsmc"""
 
     
