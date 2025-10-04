@@ -216,7 +216,7 @@ Nᴀᴍᴇ : {}
 
 Mᴇꜱꜱᴀɢᴇ : <code>{}</code>"""
     
-    CAPTION = """`📁 {file_name}`/n
+    TGE_CAPTION = """`📁 {file_name}`/n
 `💾 {file_size}` /n/n
 `🤖 Uploaded by` {BOT_NAME}"""
 
