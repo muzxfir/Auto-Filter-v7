@@ -445,11 +445,16 @@ async def start(client, message):
     settings = await get_settings(int(grp_id))            
     TGE_CAPTION = settings.get('caption', CUSTOM_FILE_CAPTION)
     if TGE_CAPTION:
-        try:
-            f_caption=TGE_CAPTION.format(file_name= '' if title is None else title, file_size='' if size is None else size, file_caption='' if f_caption is None else f_caption)
-        except Exception as e:
-            logger.exception(e)
-            f_caption = f_caption
+    try:
+        f_caption = TGE_CAPTION.format(
+            file_name='' if title is None else title,
+            file_size='' if size is None else size,
+            file_caption='' if f_caption is None else f_caption,
+            BOT_NAME=temp.B_NAME if hasattr(temp, "B_NAME") else "Tgebotz"
+        )
+    except Exception as e:
+        logger.exception(e)
+        f_caption = f_caption
 
     if f_caption is None:
         f_caption = clean_filename(files.file_name)
@@ -1065,7 +1070,7 @@ async def set_tutorial(client, message: Message):
     except IndexError:
         return await message.reply_text(
             f"<b>ᴄᴏᴍᴍᴀɴᴅ ɪɴᴄᴏᴍᴘʟᴇᴛᴇ !!\n\nᴜꜱᴇ ʟɪᴋᴇ ᴛʜɪꜱ -</b>\n\n"
-            f"<code>/{message.command[0]} https://t.me/dreamxbotz</code>"
+            f"<code>/{message.command[0]} https://t.me/tgebotz</code>"
         )
     if message.command[0] == "set_tutorial":
         tutorial_key = "tutorial"
