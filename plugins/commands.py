@@ -445,7 +445,7 @@ async def start(client, message):
     settings = await get_settings(int(grp_id))            
     TGE_CAPTION = settings.get('caption', CUSTOM_FILE_CAPTION)
     if TGE_CAPTION:
-    try:
+       try:
         f_caption = TGE_CAPTION.format(
             file_name='' if title is None else title,
             file_size='' if size is None else size,
