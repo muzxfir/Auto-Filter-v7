@@ -410,7 +410,7 @@ async def start(client, message):
             file = getattr(msg, filetype.value)
             title = clean_filename(file.file_name)
             size=get_size(file.file_size)
-            f_caption = f"<code>{title}</code>"
+            f_caption = f"🎬<code>{title}</code> /n 🗃️: {size} /n/n Updates: @srsuggestionsmc"
             settings = await get_settings(int(grp_id))
             TGE_CAPTION = settings.get('caption', CUSTOM_FILE_CAPTION)
             if TGE_CAPTION:
@@ -446,15 +446,10 @@ async def start(client, message):
     TGE_CAPTION = settings.get('caption', CUSTOM_FILE_CAPTION)
     if TGE_CAPTION:
         try:
-        f_caption = TGE_CAPTION.format(
-            file_name='' if title is None else title,
-            file_size='' if size is None else size,
-            file_caption='' if f_caption is None else f_caption,
-            BOT_NAME=temp.B_NAME if hasattr(temp, "B_NAME") else "Tgebotz"
-        )
-    except Exception as e:
-        logger.exception(e)
-        f_caption = f_caption
+            f_caption=TGE_CAPTION.format(file_name= '' if title is None else title, file_size='' if size is None else size, file_caption='' if f_caption is None else f_caption)
+        except Exception as e:
+            logger.exception(e)
+            f_caption = f_caption
 
     if f_caption is None:
         f_caption = clean_filename(files.file_name)
