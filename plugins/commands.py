@@ -446,7 +446,12 @@ async def start(client, message):
     TGE_CAPTION = settings.get('caption', CUSTOM_FILE_CAPTION)
     if TGE_CAPTION:
         try:
-            f_caption=TGE_CAPTION.format(file_name= '' if title is None else title, file_size='' if size is None else size, file_caption='' if f_caption is None else f_caption)
+            f_caption = TGE_CAPTION.format(
+    file_name='' if title is None else title,
+    file_size='' if size is None else size,
+    file_caption='' if f_caption is None else f_caption,
+    BOT_NAME=temp.B_NAME  # ← this fixes the KeyError
+            )
         except Exception as e:
             logger.exception(e)
             f_caption = f_caption
