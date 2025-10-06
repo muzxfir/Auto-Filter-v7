@@ -1,20 +1,22 @@
 class script(object):
-    START_TXT = """<b><u> 🎀 ᴡᴇʟᴄᴏᴍᴇ 🎀 </u></b>
+    START_TXT = """<b><u>💠 WELCOME 💠</u></b>
 
-<b>ʜᴇʏ {}, {}</b>
+<code>Hey😊 {}, {}</code>
 
-<b>🤖 ɪ ᴀᴍ <a href=https://t.me/{}>{}</a>, ᴛʜᴇ ᴍᴏꜱᴛ ᴘᴏᴡᴇʀꜰᴜʟ ᴀᴜᴛᴏ ꜰɪʟᴛᴇʀ ʙᴏᴛ ᴡɪᴛʜ ᴘʀᴇᴍɪᴜᴍ ꜰᴇᴀᴛᴜʀᴇꜱ.</b>
+<code>🤖 I’m {}</code> — The Most Powerful Auto Filter Bot ⚙️  
+<code>Enhanced With PRO Features 💎</code>
 """
 
 
-    GSTART_TXT = """`🎀 ᴡᴇʟᴄᴏᴍᴇ 🎀`
+    GSTART_TXT = """<code>🔮 Welcome 🔮</code>
 
-`ʜᴇʏ {},`
+<code>Hey🙂 {},</code>
 
-`🤖 ɪ ᴀᴍ` <a href=https://t.me/{}>{}</a>, `ᴛʜᴇ ᴍᴏꜱᴛ ᴘᴏᴡᴇʀꜰᴜʟ ᴀᴜᴛᴏ ꜰɪʟᴛᴇʀ ʙᴏᴛ ᴡɪᴛʜ ᴘʀᴇᴍɪᴜᴍ ꜰᴇᴀᴛᴜʀᴇꜱ.`"""
+<code>🤖 I am</code> <a href="https://t.me/{}">{}</a>
+<code>The Most Powerful Auto Filter Bot With Premium Features.</code>"""
 
     
-    HELP_TXT = """`
+    HELP_TXT = """
     
 ✨ ʜᴏᴡ ᴛᴏ ʀᴇǫᴜᴇꜱᴛ ᴅʀᴀᴍᴀꜱ & ᴍᴏᴠɪᴇꜱ ✨  
 
