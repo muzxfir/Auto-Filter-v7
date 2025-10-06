@@ -228,7 +228,7 @@ Nᴀᴍᴇ : {}
 
 Mᴇꜱꜱᴀɢᴇ : <b>{}</b>"""
     
-    CAPTION = """`🎬 {file_name}</a> `\n\n` 💾 {file_size} ` \n `⚜️ Uploa By : <a href="https://t.me/srsuggestionsmc">[ 🎬 ꜱʀ ꜱᴜɢɢᴇꜱᴛɪᴏɴꜱ ᴍᴄ ]</a>`"""
+    CAPTION = """`📂 {file_name}</a> `\n\n` 💾 {file_size} ` \n ` 📤 Upload By :` <a href="https://t.me/srsuggestionsmc">[🎬𝗦𝗥-𝗦𝗨𝗚𝗚𝗘𝗦𝗧𝗜𝗢𝗡𝗦-𝗠𝗖]</a>"""
 
     
     MOVIE_UPDATE_NOTIFY_TXT = """
