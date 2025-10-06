@@ -1863,7 +1863,7 @@ async def auto_filter(client, msg, spoll=False):
     f"⏱ <b>Processed In:</b> <code>{remaining_seconds} Sec</code>\n\n"
     f"👤 Requested by: {message.from_user.mention}\n"
     f"⚡ Powered by: {message.chat.title or temp.B_LINK or 'TgeBotz'}\n\n"
-    f"📝 <u>Here are your files:</u> 👇\n\n"
+    f"🗃️ <u>Available files:</u> 👇\n\n"
             )
         else:
             cap = (
@@ -1872,7 +1872,7 @@ async def auto_filter(client, msg, spoll=False):
     f"⏱ <b>Processed In:</b> <code>{remaining_seconds} Sec</code>\n\n"
     f"👤 Requested by: {message.from_user.mention}\n"
     f"⚡ Powered by: {message.chat.title or temp.B_LINK or 'TgeBotz'}\n\n"
-    f"📝 <u>Here are your files:</u> 👇\n\n"
+    f"🗃️ <u>Available files:</u> 👇\n\n"
 )
 
             for idx, file in enumerate(files, start=1):
