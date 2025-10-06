@@ -37,13 +37,14 @@ async def start(client, message):
             await message.react(emoji="⚡️", big=True)
     m = message
     
-     # ✅ ADD THIS BLOCK HERE
-    if len(message.command) == 2 and message.command[1].startswith("search_"):
-        query = message.command[1].replace("search_", "")
-        await message.reply_text(f"🔍 Searching for: {query}")
-        await auto_filter(client, message)   # optional auto search
-        return
-    # ✅ END
+if len(message.command) == 2 and message.command[1].startswith("search_"):
+    query = message.command[1].replace("search_", "").replace("_", " ")
+    await message.reply_text(f"🔍 Searching for: {query}")
+    
+    message.text = query
+    
+    await auto_filter(client, message)  
+    return
     
     if len(m.command) == 2 and m.command[1].startswith(('notcopy', 'sendall')):
         _, userid, verify_id, file_id = m.command[1].split("_", 3)
