@@ -108,15 +108,14 @@ async def pm_text(bot, message):
     ])
 )
 
-await bot.send_message(
-            chat_id=LOG_CHANNEL,
-            text=(
-                f"<b>#𝐏𝐌_𝐌𝐒𝐆\n\n"
-                f"👤 Name : {user}\n"
-                f"🆔 ID : {user_id}\n"
-                f"💬 Message : {content}</b>"
-            )
-        )
+await bot.send_message(chat_id=LOG_CHANNEL,
+                                   text=(
+                                       f"<b>#𝐏𝐌_𝐌𝐒𝐆\n\n"
+                                       f"👤 Nᴀᴍᴇ : {user}\n"
+                                       f"🆔 ID : {user_id}\n"
+                                       f"💬 Mᴇssᴀɢᴇ : {content}</b>"
+                                   )
+                                   )
     except Exception:
         pass
 
