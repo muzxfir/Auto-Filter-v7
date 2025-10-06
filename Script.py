@@ -17,105 +17,115 @@ class script(object):
 
     
     HELP_TXT = """
-    
-✨ ʜᴏᴡ ᴛᴏ ʀᴇǫᴜᴇꜱᴛ ᴅʀᴀᴍᴀꜱ & ᴍᴏᴠɪᴇꜱ ✨  
+<code>✨ HOW TO REQUEST DRAMAS & MOVIES ✨</code>
 
-1️⃣ ꜱᴇᴀʀᴄʜ ᴛʜᴇ ᴄᴏʀʀᴇᴄᴛ ɴᴀᴍᴇ ᴏɴ ɢᴏᴏɢʟᴇ.  
-2️⃣ ꜱᴇɴᴅ ᴛʜᴇ ɴᴀᴍᴇ ɪɴ ᴛʜᴇ ɢʀᴏᴜᴘ.  
-3️⃣ ᴜꜱᴇ ᴛʜɪꜱ ꜰᴏʀᴍᴀᴛ:  
+<code>1️⃣ Search the correct name on Google.</code>
+<code>2️⃣ Send the name in the group.</code>
+<code>3️⃣ Use this format:</code>
 
-📌 ꜰᴏʀ ꜱᴇʀɪᴇꜱ:  
-➤ ᴅʀᴀᴍᴀ ɴᴀᴍᴇ + S01 (ꜰᴏʀ ꜱᴇᴀꜱᴏɴ 1, ᴄʜᴀɴɢᴇ ꜰᴏʀ ᴏᴛʜᴇʀꜱ)  
+<code>📌 For Series:</code>
+<code>➤ Drama Name + S01 (for Season 1, change for others)</code>
 
-📌 ꜰᴏʀ ʜɪɴᴅɪ ᴅʀᴀᴍᴀꜱ:  
-➤ ᴅʀᴀᴍᴀ ɴᴀᴍᴇ + ʜɪɴᴅɪ  
+<code>📌 For Hindi Dramas:</code>
+<code>➤ Drama Name + Hindi</code>
 
-📌 ꜰᴏʀ ᴍᴏᴠɪᴇꜱ:  
-➤ ᴍᴏᴠɪᴇ ɴᴀᴍᴇ + ʏᴇᴀʀ (ᴇx: ᴊᴏᴋᴇʀ 2019)  
+<code>📌 For Movies:</code>
+<code>➤ Movie Name + Year (ex: Joker 2019)</code>
 
-🚀 ꜰᴏʟʟᴏᴡ ᴛʜᴇꜱᴇ ꜱᴛᴇᴘꜱ!
-`"""
-
-    ABOUT_TXT = """`╭────[ ᴍʏ ᴅᴇᴛᴀɪʟs ]────⍟
-├⍟ Mʏ Nᴀᴍᴇ : <a href=https://t.me/{}>{}</a>
-├⍟ Dᴇᴠᴇʟᴏᴘᴇʀ : <a href={}>ᴏᴡɴᴇʀ</a> 
-├⍟ Lɪʙʀᴀʀʏ : <a href='https://docs.pyrogram.org/'>ᴘʏʀᴏɢʀᴀᴍ</a>
-├⍟ Lᴀɴɢᴜᴀɢᴇ : <a href='https://www.python.org/download/releases/3.0/'>ᴘʏᴛʜᴏɴ 𝟹</a> 
-├⍟ Dᴀᴛᴀʙᴀsᴇ : <a href='https://www.mongodb.com/'>ᴍᴏɴɢᴏ ᴅʙ</a> 
-├⍟ Bᴏᴛ Sᴇʀᴠᴇʀ : <a href='https://heroku.com/'>ʜᴇʀᴏᴋᴜ</a> 
-├⍟ Bᴜɪʟᴅ Sᴛᴀᴛᴜs : ᴠ1.4 [ ꜱᴛᴀʙʟᴇ ]
-╰───────────────⍟`"""
-    RESTART_TXT = """
-`{} Bᴏᴛ Rᴇsᴛᴀʀᴛᴇᴅ !
-
-📅 Dᴀᴛᴇ : {}
-⏰ Tɪᴍᴇ : {}
-🌐 Tɪᴍᴇᴢᴏɴᴇ : Asia/Kolkata
-🛠️ Bᴜɪʟᴅ Sᴛᴀᴛᴜs: v1.4 [ Sᴛᴀʙʟᴇ ]
-`"""
-
-    CHANNELS = """
-<b>⚡ ɢʀᴏᴜᴘs & ᴄʜᴀɴɴᴇʟs ɪɴғᴏ ⚡ 
-
-▫ ᴀʟʟ ɴᴇᴡ ᴍᴏᴠɪᴇs & sᴇʀɪᴇs.
-▫ ғᴀsᴛᴇsᴛ ʙᴏᴛs ᴀʀᴇ ᴀᴅᴅᴇᴅ.
-▫ ғʀᴇᴇ & ᴇᴀsʏ ᴛᴏ ᴜsᴇ.
-▫ 𝟸𝟺x𝟽 sᴇʀᴠɪᴄᴇs ᴀᴠᴀɪʟᴀʙʟᴇ.</b>"""
-
-    MULTI_STATUS_TXT = """<b>╭────[ 🗃 ᴅᴀᴛᴀʙᴀsᴇ 1 🗃] ────⍟</b>
-│
-├⋟ ᴀʟʟ ᴜsᴇʀs ⋟ <code>{}</code>
-├⋟ ᴀʟʟ ɢʀᴏᴜᴘs ⋟ <code>{}</code>
-├⋟ ᴘʀᴇᴍɪᴜᴍ ᴜꜱᴇʀꜱ ⋟ <code>{}</code>
-├⋟ ᴀʟʟ ꜰɪʟᴇs ⋟ <code>{}</code>
-├⋟ ᴜsᴇᴅ sᴛᴏʀᴀɢᴇ ⋟ <code>{}</code>
-├⋟ ꜰʀᴇᴇ sᴛᴏʀᴀɢᴇ ⋟ <code>{}</code>
-│
-<b>├────[ 🗳 ᴅᴀᴛᴀʙᴀsᴇ 2 🗳 ]────⍟</b>   
-│
-├⋟ ᴀʟʟ ꜰɪʟᴇs ⋟ <code>{}</code>
-├⋟ ꜱɪᴢᴇ ⋟ <code>{}</code>
-├⋟ ꜰʀᴇᴇ ⋟ <code>{}</code>
-│
-<b>├────[ 🤖 ʙᴏᴛ ᴅᴇᴛᴀɪʟs 🤖 ]────⍟</b>   
-│
-├⋟ ᴜᴘᴛɪᴍᴇ ⋟ {}
-├⋟ ʀᴀᴍ ⋟ <code>{}%</code>
-├⋟ ᴄᴘᴜ ⋟ <code>{}%</code>   
-│
-├⋟ ʙᴏᴛʜ ᴅʙ ꜰɪʟᴇ'ꜱ: <code>{}</code>
-│
-<b>╰─────────────────────⍟</b>"""
-
-    STATUS_TXT = """<b>╭────[ 🗃 ᴅᴀᴛᴀʙᴀsᴇ 🗃 ]────⍟</b>
-│
-├⋟ ᴀʟʟ ᴜsᴇʀs ⋟ <code>{}</code>
-├⋟ ᴀʟʟ ɢʀᴏᴜᴘs ⋟ <code>{}</code>
-├⋟ ᴘʀᴇᴍɪᴜᴍ ᴜꜱᴇʀꜱ ⋟ <code>{}</code>
-├⋟ ᴀʟʟ ꜰɪʟᴇs ⋟ <code>{}</code>
-├⋟ ᴜsᴇᴅ sᴛᴏʀᴀɢᴇ ⋟ <code>{}</code>
-├⋟ ꜰʀᴇᴇ sᴛᴏʀᴀɢᴇ ⋟ <code>{}</code>
-│
-<b>├────[ 🤖 ʙᴏᴛ ᴅᴇᴛᴀɪʟs 🤖 ]────⍟</b>   
-│
-├⋟ ᴜᴘᴛɪᴍᴇ ⋟ {}
-├⋟ ʀᴀᴍ ⋟ <code>{}%</code>
-├⋟ ᴄᴘᴜ ⋟ <code>{}%</code>   
-│
-<b>╰─────────────────────⍟</b>"""
-
-    LOG_TEXT_G = """#NewGroup
-    
-Gʀᴏᴜᴘ = {}
-Iᴅ = <code>{}</code>
-Tᴏᴛᴀʟ Mᴇᴍʙᴇʀs = <code>{}</code>
-Aᴅᴅᴇᴅ Bʏ - {}
+<code>🚀 Follow these steps!</code>
 """
 
-    LOG_TEXT_P = """#NewUser
-    
-Iᴅ - <code>{}</code>
-Nᴀᴍᴇ - {}
+    ABOUT_TXT = """
+<code>────────────────────────────</code>
+<code>Bot Information</code>
+<code>────────────────────────────</code>
+
+<code>Name          : {}</code>
+<code>Developer     : Owner - {}</code>
+<code>Library       : Pyrogram</code>
+<code>Language      : Python 3</code>
+<code>Database      : MongoDB</code>
+<code>Bot Server    : Heroku Cloud</code>
+<code>Build Version : v1.4 (Stable Release)</code>
+
+<code>Description:</code>
+<code>This bot provides fast and accurate auto-filtering for</code>
+<code>movies and dramas. It uses MongoDB for efficient data</code>
+<code>management and is powered by Python and Pyrogram.</code>
+
+<code>────────────────────────────</code>
+"""
+    RESTART_TXT = """
+<code>{} Bot Restarted!</code>
+
+<code>📅 Date       : {}</code>
+<code>⏰ Time       : {}</code>
+<code>🌐 Timezone   : Asia/Kolkata</code>
+<code>🛠️ Build Status : v1.4 [ Stable ]</code>
+"""
+
+    CHANNELS = """
+<code>────────────────────────────</code>
+<code>⚡ Groups & Channels Info ⚡</code>
+<code>────────────────────────────</code>
+
+<code>▫ All new movies & series added daily</code>
+<code>▫ Fastest bots integrated for instant updates</code>
+<code>▫ Free and easy to use — no restrictions</code>
+<code>▫ 24x7 availability — anytime, anywhere</code>
+<code>▫ Stay updated with trending content</code>
+
+<code>────────────────────────────</code>
+"""
+
+    MULTI_STATUS_TXT = """
+<code>DATABASE 1:</code>
+<code>- All Users       : {}</code>
+<code>- All Groups      : {}</code>
+<code>- Premium Users   : {}</code>
+<code>- All Files       : {}</code>
+<code>- Used Storage    : {}</code>
+<code>- Free Storage    : {}</code>
+
+<code>DATABASE 2:</code>
+<code>- All Files       : {}</code>
+<code>- Size            : {}</code>
+<code>- Free            : {}</code>
+
+<code>BOT DETAILS:</code>
+<code>- Uptime          : {}</code>
+<code>- RAM Usage       : {}%</code>
+<code>- CPU Usage       : {}%</code>
+<code>- Both DB Files   : {}</code>
+"""
+
+    STATUS_TXT = """
+<code>DATABASE:</code>
+<code>- All Users       : {}</code>
+<code>- All Groups      : {}</code>
+<code>- Premium Users   : {}</code>
+<code>- All Files       : {}</code>
+<code>- Used Storage    : {}</code>
+<code>- Free Storage    : {}</code>
+
+<code>BOT DETAILS:</code>
+<code>- Uptime          : {}</code>
+<code>- RAM Usage       : {}%</code>
+<code>- CPU Usage       : {}%</code>
+"""
+
+    LOG_TEXT_G = """<code>🚀  New Group Created</code>
+
+<code>👥 Group       : {}</code>
+<code>🆔 ID          : {}</code>
+<code>📊 Total Users : {}</code>
+<code>➕ Added By    : {}</code>
+"""
+
+    LOG_TEXT_P = """<code>✨ New User Added</code>
+
+<code>🆔 ID   : {}</code>
+<code>👤 Name : {}</code>
 """
     NT_ADMIN_ALRT_TXT = """‼️ ʏᴏᴜ ᴀʀᴇ ɴᴏᴛ ᴀᴅᴍɪɴ ɪɴ ᴛʜɪꜱ ɢʀᴏᴜᴘ ‼️"""
 
