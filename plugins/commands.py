@@ -37,14 +37,18 @@ async def start(client, message):
             await message.react(emoji="⚡️", big=True)
     m = message
     
-if len(message.command) == 2 and message.command[1].startswith("search_"):
-    query = message.command[1].replace("search_", "").replace("_", " ")
-    await message.reply_text(f"🔍 Searching for: {query}")
-    
-    message.text = query
-    
-    await auto_filter(client, message)  
-    return
+# 🔍 Custom deep-link instant search handler
+    if len(message.command) == 2 and message.command[1].startswith("search_"):
+        # Extract query from deep link
+        query = message.command[1].replace("search_", "").replace("_", " ")
+        await message.reply_text(f"🔍 Searching for: {query}")
+        
+        # Set message.text so auto_filter can use it
+        message.text = query
+        
+        # Trigger your existing search function
+        await auto_filter(client, message)
+        return  # Stop further execution for deep link
     
     if len(m.command) == 2 and m.command[1].startswith(('notcopy', 'sendall')):
         _, userid, verify_id, file_id = m.command[1].split("_", 3)
