@@ -95,8 +95,8 @@ async def pm_text(bot, message):
         else:
             await message.reply_text(
                 text=(
-                    f"<b>🙋 Hey {user} 😍 ,\n\n"
-                    "You can search for movies only in our Movie Group. You are not allowed to search for movies on the Direct Bot. Please join our movie group by clicking the "Request Here" button below and search for your favorite movie there 👇.
+                    f"<code>🙋 Hey</code> {user} 😍 ,\n\n"
+                    "You can search for movies only in our Movie Group. You are not allowed to search for movies on the Direct Bot. Please join our movie group by clicking the Request Here button below and search for your favorite movie there 👇."
                     "<blockquote>"
                     "आप केवल हमारे Movie Group पर ही Movie Search कर सकते हैं।"
                     "आपको Direct Bot पर Movie Search करने की अनुमति नहीं है। कृपया नीचे दिए गए 'Request Here' वाले Button पर क्लिक करके हमारे Movie Group को Join करें और वहां अपनी मनपसंद Movie Search करें।"
