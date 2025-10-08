@@ -1,55 +1,111 @@
-⚡ Auto Filter Bot  
-Your ultimate Telegram assistant for managing files and content effortlessly! Automatically filters media, documents, and links, keeping your chats organized and clutter-free. Perfect for groups, channels, or personal use—fast, reliable, and easy to use.
+# 🤖 Auto Filter Bot v7
 
-✨ Features  
-* Auto Filter – Automatically filter content  
-* Manual Filter – Add and manage custom filters  
-* IMDB Search – Get movie & TV details from IMDB  
-* ⚡ Inline Search – Fast inline mode content search  
-* Random Pics – Send random images  
-* Indexing System – Index files from channels  
-* Stats Dashboard – Track users, chats & database  
-* Admin Tools – Logs, ban/unban, broadcast, disable/enable  
-* User Management – IDs, info, connect/disconnect  
-* File Store – Store & share files easily  
-* ✅ Spelling Check – Smart spelling correction for queries  
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3.12-blue?style=for-the-badge&logo=python" />
+  <img src="https://img.shields.io/badge/Pyrogram-v2.x-brightgreen?style=for-the-badge&logo=telegram" />
+  <img src="https://img.shields.io/badge/MongoDB-Atlas-green?style=for-the-badge&logo=mongodb" />
+  <img src="https://img.shields.io/github/license/muzxfir/Auto-Filter-v7?style=for-the-badge" />
+  <img src="https://img.shields.io/github/stars/muzxfir/Auto-Filter-v7?style=for-the-badge" />
+</p>
 
-## Configuration  
+**Smart • Fast • Reliable**  
+Automatically filter, index, and deliver files from your Telegram channels.
 
-Set the following environment variables:
+---
 
-| Variable            | Description                                      |
-|---------------------|--------------------------------------------------|
-| `BOT_TOKEN`          | Telegram Bot API Token (from @BotFather)         |
-| `API_ID`              | Telegram API ID (from my.telegram.org)           |
-| `API_HASH`           | Telegram API Hash (from my.telegram.org)         |
-| `CHANNELS`           | Space-separated list of channel/group IDs or usernames |
-| `ADMINS`             | Space-separated list of admin user IDs            |
-| `DATABASE_URI`        | MongoDB connection URI                           |
-| `DATABASE_NAME`       | MongoDB database name                            |
-| `LOG_CHANNEL`         | Channel ID for error logs                        |
+## 🌟 Overview
+**Auto Filter v7** is a next-generation Telegram bot for automated media filtering, indexing, and delivery.  
+It supports inline search, IMDb integration, admin tools, and multi-channel management — built for speed and simplicity.
 
-Optional:
-* `PICS` – Telegraph image URLs for `/start`
-* `FILE_STORE_CHANNEL` – Channel(s) for file storage  
+---
 
-## Deployment  
+## ⚡ Features
 
-Click below to deploy instantly on Koyeb:  
+### Basic Features
+- 🔍 Auto Filter – Instantly responds to user queries  
+- 🧩 Manual Filter – Add or edit keyword-based replies  
+- 🎬 IMDb / TMDB Info – Movie details with posters  
+- 📦 Channel Indexing – Auto index files from channels  
+- 💬 Inline Search – Use `@BotName query` anywhere  
+- 🧠 Smart Spell Fix – Detects and corrects user typos  
+- 🪄 Deep Link Support – Access via `/start` links  
+- 👑 Admin Controls – Ban/unban, broadcast, logs  
+- 📊 Stats Dashboard – Users, groups, DB usage  
+- 🖼️ Random Start Pics – Custom Telegraph images  
+- 💾 File Store Channel – Auto-manage files
 
-(… a “Deploy to Koyeb” badge is shown …)  
+### 🧩 Advanced / Pro Features
 
-After clicking, just set your environment variables (`BOT_TOKEN`, `API_ID`, `API_HASH`, `DATABASE_URI`, `DATABASE_NAME`, `LOG_CHANNEL`, `CHANNELS`, `ADMINS`, etc.) and press Deploy  
+**User Features**  
+- Smart Search across multiple indexed channels  
+- Multiple file results neatly formatted  
+- Instant deep-links for quick file download  
+- Auto captions with file name, size & type  
+- Interactive inline buttons for actions  
+- Optional URL shortener integration
 
-## About  
+**Admin Tools**  
+- Broadcast to all users  
+- Ban/unban users instantly  
+- View full usage statistics  
+- Force Subscribe support  
+- Auto index new channel files  
+- Logs channel for debugging  
+- Anti-flood & auto-restart system
 
-⚡ Auto Filter Bot — Your ultimate Telegram assistant for managing files and content effortlessly! Automatically filters media, documents, and links, keeping your chats organized and clutter-free. Perfect for groups, channels, or personal use—fast, reliable, and easy to use.  
+**Database & Performance**  
+- MongoDB with separate collections  
+- Query caching for faster responses  
+- Auto cleanup of inactive data  
 
-### Resources  
-Readme  
+**IMDb & TMDB Enhancements**  
+- Poster mode with cast & rating  
+- Trailer button for YouTube  
+- Genre tagging & hybrid search  
 
-### License  
-AGPL-3.0 license  
+**Developer Friendly**  
+- Modular plugin system  
+- Debug logging  
+- Multi-session support  
+- Localization-ready  
+- Auto-update alerts  
 
-### Uh oh!  
-There was an error while loading. Please reload this page.
+**Premium Optional Add-Ons**  
+- Paid Content Mode — restrict access to VIP users  
+- Encrypted File Sharing — secure delivery  
+- AI-Search Assistant — natural-language file search  
+- Theme System — customize bot messages and emojis
+
+---
+
+## ⚙️ Configuration
+
+Set these environment variables:
+
+| Variable | Description |
+|----------|-------------|
+| `BOT_TOKEN` | Telegram Bot Token from [@BotFather](https://t.me/BotFather) |
+| `API_ID / API_HASH` | Get from [my.telegram.org](https://my.telegram.org) |
+| `CHANNELS` | List of channels to index |
+| `ADMINS` | Admin user IDs |
+| `DATABASE_URI` | MongoDB connection string |
+| `DATABASE_NAME` | Database name |
+| `LOG_CHANNEL` | Log channel ID |
+| `FILE_STORE_CHANNEL` | Optional file storage channel |
+| `PICS` | Telegraph images for `/start` |
+| `SHORT_URL / SHORT_API` | Optional URL shortener |
+| `F_SUB` | Force-subscribe channel (optional) |
+
+---
+
+## 🚀 Deployment
+
+### ☁️ Deploy to Koyeb
+[![Deploy to Koyeb](https://www.koyeb.com/static/images/deploy/button.svg)](https://app.koyeb.com/deploy)
+
+### 💻 Manual / VPS Deployment
+```bash
+git clone https://github.com/muzxfir/Auto-Filter-v7
+cd Auto-Filter-v7
+pip install -r requirements.txt
+python3 bot.py
