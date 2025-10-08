@@ -1,5 +1,5 @@
 class script(object):
-    START_TXT = """<b><u>💠 WELCOME 💠</u></b>
+    START_TXT = """<b><u>😍 Welcome </u></b>
 
 <code>Hey😊 {}, {}</code>
 
@@ -8,7 +8,7 @@ class script(object):
 """
 
 
-    GSTART_TXT = """<code>🔮 Welcome 🔮</code>
+    GSTART_TXT = """<code>🔮 Welcome </code>
 
 <code>Hey🙂 {},</code>
 
@@ -17,7 +17,7 @@ class script(object):
 
     
     HELP_TXT = """
-<code>✨ HOW TO REQUEST DRAMAS & MOVIES ✨</code>
+<b> HOW TO REQUEST DRAMAS & MOVIES </b>
 
 <code>1️⃣ Search the correct name on Google.</code>
 <code>2️⃣ Send the name in the group.</code>
@@ -192,7 +192,7 @@ class script(object):
 ᴀʟʟ ᴛʜᴇ ꜰɪʟᴇꜱ ɪɴ ᴛʜɪꜱ ʙᴏᴛ ᴀʀᴇ ꜰʀᴇᴇʟʏ ᴀᴠᴀɪʟᴀʙʟᴇ ᴏɴ ᴛʜᴇ ɪɴᴛᴇʀɴᴇᴛ ᴏʀ ᴘᴏꜱᴛᴇᴅ ʙʏ ꜱᴏᴍᴇʙᴏᴅʏ ᴇʟꜱᴇ. ᴊᴜꜱᴛ ꜰᴏʀ ᴇᴀꜱʏ ꜱᴇᴀʀᴄʜɪɴɢ ᴛʜɪꜱ ʙᴏᴛ ɪꜱ ɪɴᴅᴇxɪɴɢ ꜰɪʟᴇꜱ ᴡʜɪᴄʜ ᴀʀᴇ ᴀʟʀᴇᴀᴅʏ ᴜᴘʟᴏᴀᴅᴇᴅ ᴏɴ ᴛᴇʟᴇɢʀᴀᴍ. ᴡᴇ ʀᴇꜱᴘᴇᴄᴛ ᴀʟʟ ᴛʜᴇ ᴄᴏᴘʏʀɪɢʜᴛ ʟᴀᴡꜱ ᴀɴᴅ ᴡᴏʀᴋꜱ ɪɴ ᴄᴏᴍᴘʟɪᴀɴᴄᴇ ᴡɪᴛʜ ᴅᴍᴄᴀ ᴀɴᴅ ᴇᴜᴄᴅ. ɪꜰ ᴀɴʏᴛʜɪɴɢ ɪꜱ ᴀɢᴀɪɴꜱᴛ ʟᴀᴡ ᴘʟᴇᴀꜱᴇ ᴄᴏɴᴛᴀᴄᴛ ᴍᴇ ꜱᴏ ᴛʜᴀᴛ ɪᴛ ᴄᴀɴ ʙᴇ ʀᴇᴍᴏᴠᴇᴅ ᴀꜱᴀᴘ. ɪᴛ ɪꜱ ꜰᴏʀʙɪʙʙᴇɴ ᴛᴏ ᴅᴏᴡɴʟᴏᴀᴅ, ꜱᴛʀᴇᴀᴍ, ʀᴇᴘʀᴏᴅᴜᴄᴇ, ꜱʜᴀʀᴇ ᴏʀ ᴄᴏɴꜱᴜᴍᴇ ᴄᴏɴᴛᴇɴᴛ ᴡɪᴛʜᴏᴜᴛ ᴇxᴘʟɪᴄɪᴛ ᴘᴇʀᴍɪꜱꜱɪᴏɴ ꜰʀᴏᴍ ᴛʜᴇ ᴄᴏɴᴛᴇɴᴛ ᴄʀᴇᴀᴛᴏʀ ᴏʀ ʟᴇɢᴀʟ ᴄᴏᴘʏʀɪɢʜᴛ ʜᴏʟᴅᴇʀ. ɪꜰ ʏᴏᴜ ʙᴇʟɪᴇᴠᴇ ᴛʜɪꜱ ʙᴏᴛ ɪꜱ ᴠɪᴏʟᴀᴛɪɴɢ ʏᴏᴜʀ ɪɴᴛᴇʟʟᴇᴄᴛᴜᴀʟ ᴘʀᴏᴘᴇʀᴛʏ, ᴄᴏɴᴛᴀᴄᴛ ᴛʜᴇ ʀᴇꜱᴘᴇᴄᴛɪᴠᴇ ᴄʜᴀɴɴᴇʟꜱ ꜰᴏʀ ʀᴇᴍᴏᴠᴀʟ. ᴛʜᴇ ʙᴏᴛ ᴅᴏᴇꜱ ɴᴏᴛ ᴏᴡɴ ᴀɴʏ ᴏꜰ ᴛʜᴇꜱᴇ ᴄᴏɴᴛᴇɴᴛꜱ, ɪᴛ ᴏɴʟʏ ɪɴᴅᴇx ᴛʜᴇ ꜰɪʟᴇꜱ ꜰʀᴏᴍ ᴛᴇʟᴇɢʀᴀᴍ. 
 </b>"""
 
-    DREAMXBOTZ_DONATION = DONATE_TXT = """<b>👋 ʜᴇʏ {},</b>
+    TGEBOTZ_DONATION = DONATE_TXT = """<b>👋 ʜᴇʏ {},</b>
 
 <blockquote>💖 <b>ᴘʟᴇᴀꜱᴇ ᴅᴏɴᴀᴛᴇ ᴛᴏ ᴛʜᴇ ᴅᴇᴠᴇʟᴏᴘᴇʀ</b></blockquote>
 
@@ -218,35 +218,35 @@ class script(object):
 
 ᴇxᴀᴍᴘʟᴇ : Loki S01E01
 
-🚯 ᴅᴏɴᴛ ᴜꜱᴇ ➠ ':(!,./)"""
+🚯 Don't Use ➠ ':(!,./)"""
 
     NORSLTS = """ 
 #NoResults
 
-Iᴅ : <code>{}</code>
-Nᴀᴍᴇ : {}
+Id : <code>{}</code>
+Name : {}
 
-Mᴇꜱꜱᴀɢᴇ : <b>{}</b>"""
+Message : <code>{}</code>"""
     
-    CAPTION = """`📂 {file_name}</a> `\n\n` 💾 {file_size} ` \n ` 📤 Upload By :` <a href="https://t.me/srsuggestionsmc">[🎬𝗦𝗥-𝗦𝗨𝗚𝗚𝗘𝗦𝗧𝗜𝗢𝗡𝗦-𝗠𝗖]</a>"""
+    CAPTION = """`📂 {file_name}</a> `\n\n` 💾 {file_size} ` \n\n ` 📤 Upload By :` <a href="https://t.me/srsuggestionsmc">[𝗧𝗘𝗔𝗠-𝗦𝗥𝗦]</a>"""
 
     
     MOVIE_UPDATE_NOTIFY_TXT = """
 </b><a href={poster_url}>📥</a><a href={imdb_url}>New {tag} Added</a></b>
 
-<blockquote>✨ ᴛɪᴛʟᴇ : <code>{filename}</code>
+<blockquote>✨ Title : <code>{filename}</code>
 
 
-🎭 ɢᴇɴʀᴇs : <b>{genres}</b>
-📺 ᴏᴛᴛ        : <b>{ott}</b>
-🎞️ ǫᴜᴀʟɪᴛʏ : <b>{quality}</b>
-🎧 ᴀᴜᴅɪᴏ    : <b>{language}</b>
-🔥 ʀᴀᴛɪɴɢ   : <b>{rating}</b>
+🎭 Genres : <b>{genres}</b>
+📺 Ott       : <b>{ott}</b>
+🎞️ Quality : <b>{quality}</b>
+🎧 Audio   : <b>{language}</b>
+🔥 Rating  : <b>{rating}</b>
 {episodes}
 </blockquote>
 
 
-🔍 <b>Sᴇᴀʀᴄʜ →</b> {search_link}
+🔍 <b>Search →</b> {search_link}
 """
 
 
@@ -267,7 +267,7 @@ Mᴇꜱꜱᴀɢᴇ : <b>{}</b>"""
   |   |   | |      |  | |   |   |    /          
        ---   ---   ---   ---         ---        
                                                 
-    𝙱𝙾𝚃 𝚆𝙾𝚁𝙺𝙸𝙽𝙶 𝙿𝚁𝙾𝙿𝙴𝚁𝙻𝚈....
+   Bot Working Properly....
     """
 
 
