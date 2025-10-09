@@ -1,5 +1,5 @@
 # 🤖 Auto Filter Bot v7
-
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 <p align="center">
   <img src="https://img.shields.io/badge/Python-3.12-blue?style=for-the-badge&logo=python" />
   <img src="https://img.shields.io/badge/Pyrogram-v2.x-brightgreen?style=for-the-badge&logo=telegram" />
