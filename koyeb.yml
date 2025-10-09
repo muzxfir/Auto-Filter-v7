@@ -1,0 +1,13 @@
+name: Auto-Filter-v7
+services:
+  bot:
+    image: python:3.12-slim
+    build:
+      context: .
+      dockerfile: Dockerfile
+    env:
+      TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+      API_ID: ${{ secrets.API_ID }}
+      API_HASH: ${{ secrets.API_HASH }}
+      MONGO_DB_URL: ${{ secrets.MONGO_DB_URL }}
+    run_command: python -m bot
