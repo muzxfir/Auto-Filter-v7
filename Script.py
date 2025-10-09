@@ -228,7 +228,7 @@ Name : {}
 
 Message : <code>{}</code>"""
     
-    CAPTION = """`📂 {file_name}</a> `\n\n` 💾 {file_size} ` \n\n ` 📤 Upload By :` <a href="https://t.me/srsuggestionsmc">[𝗧𝗘𝗔𝗠-𝗦𝗥𝗦]</a>"""
+    CAPTION = """`📂 {file_name}</a> `\n\n` 💾 {file_size} ` \n\n ` ©️ :` \n <a href="https://t.me/srsuggestionsmc">[𝗧𝗘𝗔𝗠-𝗦𝗥𝗦]</a>"""
 
     
     MOVIE_UPDATE_NOTIFY_TXT = """
