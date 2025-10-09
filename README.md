@@ -1,10 +1,28 @@
-![Build Status](https://img.shields.io/github/actions/workflow/status/muzxfir/Auto-Filter-v7/run-bot.yml)
+---
 
-![Uptime](https://img.shields.io/uptimerobot/ratio/m794098723-abcdef123456)
-[💖 Sponsor](https://github.com/sponsors/TGEBOTZ)
-## 👥 Contributors
-[![tgebotz](https://avatars.githubusercontent.com/u/12345678)](https://github.com/tgebotz)
-[![inbliz](https://avatars.githubusercontent.com/u/87654321)](https://github.com/inbliz)
+This **Ultimate README** includes:
 
-⭐ If you like this bot, please give it a star!  
-🍴 Feel free to fork and contribute!
+- Bot logo & GIF demo  
+- Feature highlights with emojis  
+- Commands table & inline button showcase  
+- Folder structure with collapsible section  
+- Code snippets (Thanks message & buttons)  
+- Workflow diagram  
+- Deployment instructions (Koyeb, Docker, Heroku)  
+- Stats & badges (Python version, workflow, Koyeb, uptime)  
+- FAQ / Troubleshooting  
+- Multi-language support showcase  
+- Contributors & testimonials  
+- Call-to-action buttons & sponsorship section  
+
+---
+
+If you want, I can **also create the full ready-to-deploy setup** with:
+
+- `Dockerfile`  
+- `koyeb.yml`  
+- `.env.example`  
+
+So your bot can go live **instantly on Koyeb** with all features.  
+
+Do you want me to create that next?
