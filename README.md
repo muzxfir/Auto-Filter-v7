@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://files.catbox.moe/wllfrk.png">
+  <img src="https://files.catbox.moe/29gfwg.png">
 </p>
 <h1 align="center">
   Bot
