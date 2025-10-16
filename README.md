@@ -1,7 +1,7 @@
 # 🚀🤖 𝗔𝘂𝘁𝗼-𝗙𝗶𝗹𝘁𝗲𝗿-𝘃𝟳
 
 ![Python](https://img.shields.io/badge/python-3.12-blue) 
-![GitHub Workflow](https://img.shields.io/github/actions/workflow/status/username/Auto-Filter-v7/run-bot.yml) 
+![GitHub Workflow](https://img.shields.io/github/actions/workflow/status/muzxfir/Auto-Filter-v7/run-bot.yml) 
 ![Deploy on Koyeb](https://img.shields.io/badge/deploy-Koyeb-brightgreen)
 ![Version](https://img.shields.io/badge/version-v7.0-blue)
 
@@ -9,7 +9,7 @@
 
 ---
 
-## ✨ 𝗞𝗲𝘆 𝗙𝗲𝗮𝘁𝘂𝗿𝗲𝘀
+### ✨ 𝗞𝗲𝘆 𝗙𝗲𝗮𝘁𝘂𝗿𝗲𝘀.
 
 🌟 Auto-filter files & links  
 📂 Organize files into folders automatically   
@@ -19,7 +19,7 @@
 
 ---
 
-## 🚀 𝗤𝘂𝗶𝗰𝗸 𝗔𝗰𝘁𝗶𝗼𝗻
+### 🚀 𝗤𝘂𝗶𝗰𝗸 𝗔𝗰𝘁𝗶𝗼𝗻
 
 | [🤖 𝗦𝗮𝗱𝗶𝗲𝗠𝗼𝗹](https://t.me/SadiemolBot) | 
 [📂 𝗔𝘂𝘁𝗼-𝗙𝗶𝗹𝘁𝗲𝗿-𝘃𝟳](https://github.com/username/Auto-Filter-v7) | 
@@ -44,3 +44,5 @@
 ---
 
 💬 **Try Auto-Filter-v7 today and make your Telegram groups smarter, faster, and more fun!**
+iam on github
+hihigwd
