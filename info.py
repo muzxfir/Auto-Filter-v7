@@ -200,32 +200,47 @@ BAD_WORDS = {
 # Server & Web Configuration
 # ============================
 
-NO_PORT = bool(environ.get('NO_PORT', False))
-APP_NAME = None
-if 'DYNO' in environ:
-    ON_HEROKU = True
-    APP_NAME = environ.get('APP_NAME')
-else:
-    ON_HEROKU = False
-BIND_ADRESS = str(getenv('WEB_SERVER_BIND_ADDRESS', '0.0.0.0'))
-FQDN = str(getenv('FQDN', BIND_ADRESS)) if not ON_HEROKU or getenv('FQDN') else APP_NAME+'.herokuapp.com'
-URL = "https://{}/".format(FQDN) if ON_HEROKU or NO_PORT else "https://{}/".format(FQDN, PORT)
-SLEEP_THRESHOLD = int(environ.get('SLEEP_THRESHOLD', '60'))
-WORKERS = int(environ.get('WORKERS', '4'))
-SESSION_NAME = str(environ.get('SESSION_NAME', 'tgeBotz'))
-MULTI_CLIENT = False
-name = str(environ.get('name', 'TGEBOTZ'))
-PING_INTERVAL = int(environ.get("PING_INTERVAL", "1200"))  # 20 minutes
-if 'DYNO' in environ:
-    ON_HEROKU = True
-    APP_NAME = str(getenv('APP_NAME'))
-else:
-    ON_HEROKU = False
+# Server bind address (listen on all interfaces)
+BIND_ADDRESS = str(getenv('WEB_SERVER_BIND_ADDRESS', '0.0.0.0'))
+
+# Detect Koyeb deployment
+ON_KOYEB = bool(getenv('KOYEB', False))
+APP_NAME = str(getenv('APP_NAME', '')) if ON_KOYEB else None
+
+# Fully Qualified Domain Name (public URL of your app)
+# Must be set in Koyeb environment variables as FQDN
+FQDN = str(getenv('FQDN', APP_NAME + '.koyeb.app' if APP_NAME else 'localhost'))
+
+# Web server URL (used for webhooks)
 HAS_SSL = bool(getenv('HAS_SSL', True))
-if HAS_SSL:
-    URL = "https://{}/".format(FQDN)
-else:
-    URL = "http://{}/".format(FQDN)
+URL = "https://{}/".format(FQDN) if HAS_SSL else "http://{}/".format(FQDN)
+
+# Other server configs
+NO_PORT = bool(getenv('NO_PORT', False))
+SLEEP_THRESHOLD = int(getenv('SLEEP_THRESHOLD', '60'))
+WORKERS = int(getenv('WORKERS', '4'))
+SESSION_NAME = str(getenv('SESSION_NAME', 'tgeBotz'))
+MULTI_CLIENT = False
+NAME = str(getenv('name', 'TGEBOTZ'))
+PING_INTERVAL = int(getenv("PING_INTERVAL", "1200"))  # seconds (20 minutes)
+
+# ============================
+# Telegram API Configuration
+# ============================
+
+BOT_TOKEN = str(getenv("BOT_TOKEN"))
+
+# Always use this URL for Telegram API calls
+TELEGRAM_API_URL = f"https://api.telegram.org/bot{BOT_TOKEN}/"
+
+# Example usage: ping Telegram API
+if __name__ == "__main__":
+    import requests
+    try:
+        res = requests.get(TELEGRAM_API_URL + "getMe")
+        print("Telegram ping successful:", res.json())
+    except Exception as e:
+        print("Telegram ping failed:", e)
 
 # ============================
 # Reactions Configuration
