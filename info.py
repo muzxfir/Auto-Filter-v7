@@ -222,7 +222,7 @@ WORKERS = int(getenv('WORKERS', '4'))
 SESSION_NAME = str(getenv('SESSION_NAME', 'tgeBotz'))
 MULTI_CLIENT = False
 NAME = str(getenv('name', 'TGEBOTZ'))
-PING_INTERVAL = int(getenv("PING_INTERVAL", "1200"))  # seconds (20 minutes)
+PING_INTERVAL = int(getenv("PING_INTERVAL", "300"))  # seconds (5 minutes)
 
 # ============================
 # Telegram API Configuration
