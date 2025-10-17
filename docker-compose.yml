@@ -1,14 +1,24 @@
 version: "3.12"
+
 services:
-   worker:
-    build: .
+  tgebotz:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: always
     environment:
-      BOT_TOKEN: $BOT_TOKEN
-      API_ID: $API_ID
-      API_HASH: $API_HASH
-      CHANNELS: $CHANNELS
-      ADMINS: $ADMINS
-      LOG_CHANNEL: $LOG_CHANNEL
-      DATABASE_NAME: $DATABASE_NAME
-      DATABASE_URI: $DATABASE_URI
-      HEROKU_API_KEY: $HEROKU_API_KEY
+      BOT_TOKEN: "YOUR_BOT_TOKEN"
+      API_ID: "YOUR_API_ID"
+      API_HASH: "YOUR_API_HASH"
+      CHANNELS: "YOUR_CHANNELS"
+      ADMINS: "YOUR_ADMINS"
+      LOG_CHANNEL: "YOUR_LOG_CHANNEL"
+      DATABASE_NAME: "YOUR_DATABASE_NAME"
+      DATABASE_URI: "YOUR_DATABASE_URI"
+      KOYEB: "1"              # Detect Koyeb deployment
+      HAS_SSL: "1"            # Optional: HTTPS
+      FQDN: "tgebotz.koyeb.app"
+      PING_INTERVAL: "300"   # seconds (5 minutes)
+    volumes:
+      - .:/app
+    command: python3 bot.py
