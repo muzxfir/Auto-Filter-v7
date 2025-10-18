@@ -209,8 +209,7 @@ APP_NAME = str(getenv('APP_NAME', '')) if ON_KOYEB else None
 
 # Fully Qualified Domain Name (public URL of your app)
 # Must be set in Koyeb environment variables as FQDN
-FQDN = str(getenv('FQDN', APP_NAME + '.koyeb.app' if APP_NAME else 'localhost'))
-
+FQDN = str(getenv('FQDN', 'auto-filter-v7.koyeb.app'))
 # Web server URL (used for webhooks)
 HAS_SSL = bool(getenv('HAS_SSL', True))
 URL = "https://{}/".format(FQDN) if HAS_SSL else "http://{}/".format(FQDN)
