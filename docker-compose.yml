@@ -7,18 +7,19 @@ services:
       dockerfile: Dockerfile
     restart: always
     environment:
-      BOT_TOKEN: "YOUR_BOT_TOKEN"
-      API_ID: "YOUR_API_ID"
-      API_HASH: "YOUR_API_HASH"
-      CHANNELS: "YOUR_CHANNELS"
-      ADMINS: "YOUR_ADMINS"
-      LOG_CHANNEL: "YOUR_LOG_CHANNEL"
-      DATABASE_NAME: "YOUR_DATABASE_NAME"
-      DATABASE_URI: "YOUR_DATABASE_URI"
-      KOYEB: "1"              # Detect Koyeb deployment
-      HAS_SSL: "1"            # Optional: HTTPS
-      FQDN: "tgebotz.koyeb.app"
-      PING_INTERVAL: "300"   # seconds (5 minutes)
+      BOT_TOKEN: "YOUR_BOT_TOKEN"           # Your Telegram bot token
+      API_ID: "YOUR_API_ID"                 # From my.telegram.org
+      API_HASH: "YOUR_API_HASH"             # From my.telegram.org
+      CHANNELS: "YOUR_CHANNELS"             # Channels to monitor, comma-separated
+      ADMINS: "YOUR_ADMINS"                 # Admin user IDs, comma-separated
+      LOG_CHANNEL: "YOUR_LOG_CHANNEL"       # Optional: Log channel ID
+      DATABASE_NAME: "YOUR_DATABASE_NAME"   # MongoDB database name
+      DATABASE_URI: "YOUR_DATABASE_URI"     # MongoDB URI
+      BIN_CHANNEL: "YOUR_BIN_CHANNEL_ID"    # Telegram channel ID for BIN (bot must be admin)
+      KOYEB: "1"                            # Detect Koyeb deployment
+      HAS_SSL: "1"                          # Optional: HTTPS
+      FQDN: "tgebotz.koyeb.app"             # Your Koyeb app domain
+      PING_INTERVAL: "300"                   # seconds (5 min)
     volumes:
       - .:/app
     command: python3 bot.py
