@@ -509,7 +509,7 @@ async def start(client, message):
 async def log_file(bot, message):
     """Send log file"""
     try:
-        await message.reply_document('DreamXlogs.txt', caption="📑 **ʟᴏɢꜱ**")
+        await message.reply_document('Tgelogs.txt', caption="📑 **ʟᴏɢꜱ**")
     except Exception as e:
         await message.reply(str(e))
 
