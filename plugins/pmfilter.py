@@ -1239,10 +1239,10 @@ async def cb_handler(client: Client, query: CallbackQuery):
                                  callback_data=f"alalert#{from_user}")
         ]]
         btn2 = [[
-            InlineKeyboardButton('ᴊᴏɪɴ ᴄʜᴀɴɴᴇʟ', url=link.invite_link),
+            InlineKeyboardButton('JOIN CHANNEL', url=link.invite_link),
             InlineKeyboardButton("VIEW STATUS", url=f"{query.message.link}")
         ], [
-            InlineKeyboardButton("🔍 SEAR🪄HERE 🔎", url=GRP_LNK)
+            InlineKeyboardButton("🔍 SEARCH HERE 🔎", url=GRP_LNK)
         ]]
         if query.from_user.id in ADMINS:
             user = await client.get_users(from_user)
