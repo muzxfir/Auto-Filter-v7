@@ -191,7 +191,7 @@ async def plan(client, message):
 
 
 # Telegram Star Payment Method 👇
-# Credit - @BeingXAnonymous
+# Credit - @muzxfir
 
 @Client.on_callback_query(filters.regex(r"buy_\d+"))
 async def premium_button(client, callback_query: CallbackQuery):
