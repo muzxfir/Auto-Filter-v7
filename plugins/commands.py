@@ -352,25 +352,25 @@ async def start(client, message):
                 if STREAM_MODE and not PREMIUM_STREAM_MODE:
                     
                     btn = [
-                        [InlineKeyboardButton('🚀 ꜰᴀꜱᴛ ᴅᴏᴡɴʟᴏᴀᴅ / ᴡᴀᴛᴄʜ ᴏɴʟɪɴᴇ 🖥️', callback_data=f'generate_stream_link:{file_id}')],
-                        [InlineKeyboardButton('📌 ᴊᴏɪɴ ᴜᴘᴅᴀᴛᴇꜱ ᴄʜᴀɴɴᴇʟ 📌', url=UPDATE_CHNL_LNK)]  # Keep this line unchanged  
+                        [InlineKeyboardButton('👤 ADMIN 👤', url=OWNER_LNK)],
+                        [InlineKeyboardButton('💠 JOIN UPDATES CHANNEL 💠', url=UPDATE_CHNL_LNK)]  # Keep this line unchanged  
                     ]
                 elif STREAM_MODE and PREMIUM_STREAM_MODE:
                     
                     if not await db.has_premium_access(message.from_user.id):
                         
                         btn = [
-                            [InlineKeyboardButton('🚀 ꜰᴀꜱᴛ ᴅᴏᴡɴʟᴏᴀᴅ / ᴡᴀᴛᴄʜ ᴏɴʟɪɴᴇ 🖥️', callback_data=f'prestream')],
-                            [InlineKeyboardButton('📌 ᴊᴏɪɴ ᴜᴘᴅᴀᴛᴇꜱ ᴄʜᴀɴɴᴇʟ 📌', url=UPDATE_CHNL_LNK)]  # Keep this line unchanged  
+                            [InlineKeyboardButton('👤 ADMIN 👤', url=OWNER_LNK)],
+                            [InlineKeyboardButton('💠 JOIN UPDATES CHANNEL 💠', url=UPDATE_CHNL_LNK)]  # Keep this line unchanged  
                         ]
                     else:
                         
                         btn = [
-                            [InlineKeyboardButton('🚀 ꜰᴀꜱᴛ ᴅᴏᴡɴʟᴏᴀᴅ / ᴡᴀᴛᴄʜ ᴏɴʟɪɴᴇ 🖥️', callback_data=f'generate_stream_link:{file_id}')],
-                            [InlineKeyboardButton('📌 ᴊᴏɪɴ ᴜᴘᴅᴀᴛᴇꜱ ᴄʜᴀɴɴᴇʟ 📌', url=UPDATE_CHNL_LNK)]  # Keep this line unchanged  
+                            [InlineKeyboardButton('👤 ADMIN 👤', url=OWNER_LNK)],
+                            [InlineKeyboardButton('💠 JOIN UPDATES CHANNEL 💠', url=UPDATE_CHNL_LNK)]  # Keep this line unchanged  
                         ]
                 else:
-                    btn = [[InlineKeyboardButton('📌 ᴊᴏɪɴ ᴜᴘᴅᴀᴛᴇꜱ ᴄʜᴀɴɴᴇʟ 📌', url=UPDATE_CHNL_LNK)]]
+                    btn = [[InlineKeyboardButton('💠 JOIN UPDATES CHANNEL 💠', url=UPDATE_CHNL_LNK)]]
                 msg = await client.send_cached_media(
                     chat_id=message.from_user.id,
                     file_id=file_id,
@@ -381,7 +381,7 @@ async def start(client, message):
                 filesarr.append(msg)
             k = await client.send_message(chat_id=message.from_user.id, text=f"<b><u>❗️❗️❗️IMPORTANT❗️️❗️❗️</u></b>\n\nᴛʜɪꜱ ᴍᴏᴠɪᴇ ꜰɪʟᴇ/ᴠɪᴅᴇᴏ ᴡɪʟʟ ʙᴇ ᴅᴇʟᴇᴛᴇᴅ ɪɴ <b><u><code>{get_time(DELETE_TIME)}</code></u> 🫥 <i></b>(ᴅᴜᴇ ᴛᴏ ᴄᴏᴘʏʀɪɢʜᴛ ɪꜱꜱᴜᴇꜱ)</i>.\n\n<b><i>ᴘʟᴇᴀꜱᴇ ꜰᴏʀᴡᴀʀᴅ ᴛʜɪꜱ ꜰɪʟᴇ ᴛᴏ ꜱᴏᴍᴇᴡʜᴇʀᴇ ᴇʟꜱᴇ ᴀɴᴅ ꜱᴛᴀʀᴛ ᴅᴏᴡɴʟᴏᴀᴅɪɴɢ ᴛʜᴇʀᴇ</i></b>")
             await asyncio.sleep(DELETE_TIME)
-            for x in filesarr:
+            for x 'in filesarr:
                 await x.delete()
             await k.edit_text("<b>ʏᴏᴜʀ ᴀʟʟ ᴠɪᴅᴇᴏꜱ/ꜰɪʟᴇꜱ ᴀʀᴇ ᴅᴇʟᴇᴛᴇᴅ ꜱᴜᴄᴄᴇꜱꜱꜰᴜʟʟʏ !\nᴋɪɴᴅʟʏ ꜱᴇᴀʀᴄʜ ᴀɢᴀɪɴ</b>")
             return
@@ -397,23 +397,23 @@ async def start(client, message):
         try:
             if STREAM_MODE and not PREMIUM_STREAM_MODE:
                 btn = [
-                    [InlineKeyboardButton('🚀 ꜰᴀꜱᴛ ᴅᴏᴡɴʟᴏᴀᴅ / ᴡᴀᴛᴄʜ ᴏɴʟɪɴᴇ 🖥️', callback_data=f'generate_stream_link:{file_id}')],
-                    [InlineKeyboardButton('📌 ᴊᴏɪɴ ᴜᴘᴅᴀᴛᴇꜱ ᴄʜᴀɴɴᴇʟ 📌', url=UPDATE_CHNL_LNK)]  # Keep this line unchanged  
+                    [InlineKeyboardButton('👤 ADMIN 👤', url=OWNER_LNK)],
+                    [InlineKeyboardButton('💠 JOIN UPDATES CHANNEL 💠', url=UPDATE_CHNL_LNK)]  # Keep this line unchanged  
                 ]
             elif STREAM_MODE and PREMIUM_STREAM_MODE:
                 if not await db.has_premium_access(message.from_user.id):
                    btn = [
-                        [InlineKeyboardButton('🚀 ꜰᴀꜱᴛ ᴅᴏᴡɴʟᴏᴀᴅ / ᴡᴀᴛᴄʜ ᴏɴʟɪɴᴇ 🖥️', callback_data=f'prestream')],
-                        [InlineKeyboardButton('📌 ᴊᴏɪɴ ᴜᴘᴅᴀᴛᴇꜱ ᴄʜᴀɴɴᴇʟ 📌', url=UPDATE_CHNL_LNK)]  # Keep this line unchanged  
+                        [InlineKeyboardButton('👤 ADMIN 👤', url=OWNER_LNK)],
+                        [InlineKeyboardButton('💠 JOIN UPDATES CHANNEL 💠', url=UPDATE_CHNL_LNK)]  # Keep this line unchanged  
                     ]
                 else:
                     btn = [
-                        [InlineKeyboardButton('🚀 ꜰᴀꜱᴛ ᴅᴏᴡɴʟᴏᴀᴅ / ᴡᴀᴛᴄʜ ᴏɴʟɪɴᴇ 🖥️', callback_data=f'generate_stream_link:{file_id}')],
-                        [InlineKeyboardButton('📌 ᴊᴏɪɴ ᴜᴘᴅᴀᴛᴇꜱ ᴄʜᴀɴɴᴇʟ 📌', url=UPDATE_CHNL_LNK)]  # Keep this line unchanged  
+                        [InlineKeyboardButton('👤 ADMIN 👤', url=OWNER_LNK)],
+                        [InlineKeyboardButton('💠 JOIN UPDATES CHANNEL 💠', url=UPDATE_CHNL_LNK)]  # Keep this line unchanged  
                     ]
             else:
             
-                btn = [[InlineKeyboardButton('📌 ᴊᴏɪɴ ᴜᴘᴅᴀᴛᴇꜱ ᴄʜᴀɴɴᴇʟ 📌', url=UPDATE_CHNL_LNK)]] 
+                btn = [[InlineKeyboardButton('💠 JOIN UPDATES CHANNEL 💠', url=UPDATE_CHNL_LNK)]] 
             msg = await client.send_cached_media(
                 chat_id=message.from_user.id,
                 file_id=file_id,
@@ -470,22 +470,22 @@ async def start(client, message):
     
     if STREAM_MODE and not PREMIUM_STREAM_MODE:
         btn = [
-            [InlineKeyboardButton('🚀 ꜰᴀꜱᴛ ᴅᴏᴡɴʟᴏᴀᴅ / ᴡᴀᴛᴄʜ ᴏɴʟɪɴᴇ 🖥️', callback_data=f'generate_stream_link:{file_id}')],
-            [InlineKeyboardButton('📌 ᴊᴏɪɴ ᴜᴘᴅᴀᴛᴇꜱ ᴄʜᴀɴɴᴇʟ 📌', url=UPDATE_CHNL_LNK)]  # Keep this line unchanged  
+            [InlineKeyboardButton('👤 ADMIN 👤', url=OWNER_LNK)],
+            [InlineKeyboardButton('💠 JOIN UPDATES CHANNEL 💠', url=UPDATE_CHNL_LNK)]  # Keep this line unchanged  
         ]
     elif STREAM_MODE and PREMIUM_STREAM_MODE:
         if not await db.has_premium_access(message.from_user.id):
             btn = [
-                [InlineKeyboardButton('🚀 ꜰᴀꜱᴛ ᴅᴏᴡɴʟᴏᴀᴅ / ᴡᴀᴛᴄʜ ᴏɴʟɪɴᴇ 🖥️', callback_data=f'prestream')],
-                [InlineKeyboardButton('📌 ᴊᴏɪɴ ᴜᴘᴅᴀᴛᴇꜱ ᴄʜᴀɴɴᴇʟ 📌', url=UPDATE_CHNL_LNK)]  # Keep this line unchanged  
+                [InlineKeyboardButton('👤 ADMIN 👤', url=OWNER_LNK)],
+                [InlineKeyboardButton('💠 JOIN UPDATES CHANNEL 💠', url=UPDATE_CHNL_LNK)]  # Keep this line unchanged  
             ]
         else:
             btn = [
-                [InlineKeyboardButton('🚀 ꜰᴀꜱᴛ ᴅᴏᴡɴʟᴏᴀᴅ / ᴡᴀᴛᴄʜ ᴏɴʟɪɴᴇ 🖥️', callback_data=f'generate_stream_link:{file_id}')],
-                [InlineKeyboardButton('📌 ᴊᴏɪɴ ᴜᴘᴅᴀᴛᴇꜱ ᴄʜᴀɴɴᴇʟ 📌', url=UPDATE_CHNL_LNK)]  # Keep this line unchanged  
+                [InlineKeyboardButton('👤 ADMIN 👤', url=OWNER_LNK)],
+                [InlineKeyboardButton('💠 JOIN UPDATES CHANNEL 💠', url=UPDATE_CHNL_LNK)]  # Keep this line unchanged  
             ]
     else:
-        btn = [[InlineKeyboardButton('📌 ᴊᴏɪɴ ᴜᴘᴅᴀᴛᴇꜱ ᴄʜᴀɴɴᴇʟ 📌', url=UPDATE_CHNL_LNK)]]
+        btn = [[InlineKeyboardButton('💠 JOIN UPDATES CHANNEL 💠', url=UPDATE_CHNL_LNK)]]
     msg = await client.send_cached_media(
         chat_id=message.from_user.id,
         file_id=file_id,
