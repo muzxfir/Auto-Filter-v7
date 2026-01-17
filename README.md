@@ -1,4 +1,5 @@
-https://files.catbox.moe/49w2wm.png
+![Hectacore](https://files.catbox.moe/49w2wm.png)
+
 # 🚀🤖 𝗔𝘂𝘁𝗼-𝗙𝗶𝗹𝘁𝗲𝗿-𝘃𝟳
 
 ![Python](https://img.shields.io/badge/python-3.12-blue) 
