@@ -20,11 +20,7 @@
 🌐 Multi-language support  
 
 ---
-
-### 🚀 𝗤𝘂𝗶𝗰𝗸 𝗔𝗰𝘁𝗶𝗼𝗻
-
-| [🤖 𝗦𝗮𝗱𝗶𝗲𝗠𝗼𝗹](https://t.me/SadiemolBot) | 
-[📂 𝗔𝘂𝘁𝗼-𝗙𝗶𝗹𝘁𝗲𝗿-𝘃𝟳](https://github.com/username/Auto-Filter-v7) | 
+🎀 
 
 ---
 
