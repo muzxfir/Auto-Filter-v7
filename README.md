@@ -1,4 +1,4 @@
-![Hectacore](https://files.catbox.moe/49w2wm.png)
+![Hectacore]()
 
 # 🚀🤖 𝗔𝘂𝘁𝗼-𝗙𝗶𝗹𝘁𝗲𝗿-𝘃𝟳
 
