@@ -352,25 +352,25 @@ async def start(client, message):
                 if STREAM_MODE and not PREMIUM_STREAM_MODE:
                     
                     btn = [
-                        [InlineKeyboardButton('👤 ADMIN 👤', url=OWNER_LNK)],
-                        [InlineKeyboardButton('💠 JOIN UPDATES CHANNEL 💠', url=UPDATE_CHNL_LNK)]  # Keep this line unchanged  
+                        [InlineKeyboardButton('ᴀᴅᴍɪɴ 🤴', url=OWNER_LNK)],
+                        [InlineKeyboardButton('🇺🇵🇩🇦🇹🇪🇸 🇨🇭🇦🇳🇳🇪🇱', url=UPDATE_CHNL_LNK)]  # Keep this line unchanged  
                     ]
                 elif STREAM_MODE and PREMIUM_STREAM_MODE:
                     
                     if not await db.has_premium_access(message.from_user.id):
                         
                         btn = [
-                            [InlineKeyboardButton('👤 ADMIN 👤', url=OWNER_LNK)],
-                            [InlineKeyboardButton('💠 JOIN UPDATES CHANNEL 💠', url=UPDATE_CHNL_LNK)]  # Keep this line unchanged  
+                            [InlineKeyboardButton('ᴀᴅᴍɪɴ 🤴', url=OWNER_LNK)],
+                            [InlineKeyboardButton('🇺🇵🇩🇦🇹🇪🇸 🇨🇭🇦🇳🇳🇪🇱', url=UPDATE_CHNL_LNK)]  # Keep this line unchanged  
                         ]
                     else:
                         
                         btn = [
-                            [InlineKeyboardButton('👤 ADMIN 👤', url=OWNER_LNK)],
-                            [InlineKeyboardButton('💠 JOIN UPDATES CHANNEL 💠', url=UPDATE_CHNL_LNK)]  # Keep this line unchanged  
+                            [InlineKeyboardButton('ᴀᴅᴍɪɴ 🤴', url=OWNER_LNK)],
+                            [InlineKeyboardButton('🇺🇵🇩🇦🇹🇪🇸 🇨🇭🇦🇳🇳🇪🇱', url=UPDATE_CHNL_LNK)]  # Keep this line unchanged  
                         ]
                 else:
-                    btn = [[InlineKeyboardButton('💠 JOIN UPDATES CHANNEL 💠', url=UPDATE_CHNL_LNK)]]
+                    btn = [[InlineKeyboardButton('🇺🇵🇩🇦🇹🇪🇸 🇨🇭🇦🇳🇳🇪🇱', url=UPDATE_CHNL_LNK)]]
                 msg = await client.send_cached_media(
                     chat_id=message.from_user.id,
                     file_id=file_id,
@@ -397,23 +397,23 @@ async def start(client, message):
         try:
             if STREAM_MODE and not PREMIUM_STREAM_MODE:
                 btn = [
-                    [InlineKeyboardButton('👤 ADMIN 👤', url=OWNER_LNK)],
-                    [InlineKeyboardButton('💠 JOIN UPDATES CHANNEL 💠', url=UPDATE_CHNL_LNK)]  # Keep this line unchanged  
+                    [InlineKeyboardButton('ᴀᴅᴍɪɴ 🤴', url=OWNER_LNK)],
+                    [InlineKeyboardButton('🇺🇵🇩🇦🇹🇪🇸 🇨🇭🇦🇳🇳🇪🇱', url=UPDATE_CHNL_LNK)]  # Keep this line unchanged  
                 ]
             elif STREAM_MODE and PREMIUM_STREAM_MODE:
                 if not await db.has_premium_access(message.from_user.id):
                    btn = [
-                        [InlineKeyboardButton('👤 ADMIN 👤', url=OWNER_LNK)],
-                        [InlineKeyboardButton('💠 JOIN UPDATES CHANNEL 💠', url=UPDATE_CHNL_LNK)]  # Keep this line unchanged  
+                        [InlineKeyboardButton('ᴀᴅᴍɪɴ 🤴', url=OWNER_LNK)],
+                        [InlineKeyboardButton('🇺🇵🇩🇦🇹🇪🇸 🇨🇭🇦🇳🇳🇪🇱', url=UPDATE_CHNL_LNK)]  # Keep this line unchanged  
                     ]
                 else:
                     btn = [
-                        [InlineKeyboardButton('👤 ADMIN 👤', url=OWNER_LNK)],
-                        [InlineKeyboardButton('💠 JOIN UPDATES CHANNEL 💠', url=UPDATE_CHNL_LNK)]  # Keep this line unchanged  
+                        [InlineKeyboardButton('ᴀᴅᴍɪɴ 🤴', url=OWNER_LNK)],
+                        [InlineKeyboardButton('🇺🇵🇩🇦🇹🇪🇸 🇨🇭🇦🇳🇳🇪🇱', url=UPDATE_CHNL_LNK)]  # Keep this line unchanged  
                     ]
             else:
             
-                btn = [[InlineKeyboardButton('💠 JOIN UPDATES CHANNEL 💠', url=UPDATE_CHNL_LNK)]] 
+                btn = [[InlineKeyboardButton('🇺🇵🇩🇦🇹🇪🇸 🇨🇭🇦🇳🇳🇪🇱', url=UPDATE_CHNL_LNK)]] 
             msg = await client.send_cached_media(
                 chat_id=message.from_user.id,
                 file_id=file_id,
@@ -470,22 +470,22 @@ async def start(client, message):
     
     if STREAM_MODE and not PREMIUM_STREAM_MODE:
         btn = [
-            [InlineKeyboardButton('👤 ADMIN 👤', url=OWNER_LNK)],
-            [InlineKeyboardButton('💠 JOIN UPDATES CHANNEL 💠', url=UPDATE_CHNL_LNK)]  # Keep this line unchanged  
+            [InlineKeyboardButton('ᴀᴅᴍɪɴ 🤴', url=OWNER_LNK)],
+            [InlineKeyboardButton('🇺🇵🇩🇦🇹🇪🇸 🇨🇭🇦🇳🇳🇪🇱', url=UPDATE_CHNL_LNK)]  # Keep this line unchanged  
         ]
     elif STREAM_MODE and PREMIUM_STREAM_MODE:
         if not await db.has_premium_access(message.from_user.id):
             btn = [
-                [InlineKeyboardButton('👤 ADMIN 👤', url=OWNER_LNK)],
-                [InlineKeyboardButton('💠 JOIN UPDATES CHANNEL 💠', url=UPDATE_CHNL_LNK)]  # Keep this line unchanged  
+                [InlineKeyboardButton('ᴀᴅᴍɪɴ 🤴', url=OWNER_LNK)],
+                [InlineKeyboardButton('🇺🇵🇩🇦🇹🇪🇸 🇨🇭🇦🇳🇳🇪🇱', url=UPDATE_CHNL_LNK)]  # Keep this line unchanged  
             ]
         else:
             btn = [
-                [InlineKeyboardButton('👤 ADMIN 👤', url=OWNER_LNK)],
-                [InlineKeyboardButton('💠 JOIN UPDATES CHANNEL 💠', url=UPDATE_CHNL_LNK)]  # Keep this line unchanged  
+                [InlineKeyboardButton('ᴀᴅᴍɪɴ 🤴', url=OWNER_LNK)],
+                [InlineKeyboardButton('🇺🇵🇩🇦🇹🇪🇸 🇨🇭🇦🇳🇳🇪🇱', url=UPDATE_CHNL_LNK)]  # Keep this line unchanged  
             ]
     else:
-        btn = [[InlineKeyboardButton('💠 JOIN UPDATES CHANNEL 💠', url=UPDATE_CHNL_LNK)]]
+        btn = [[InlineKeyboardButton('🇺🇵🇩🇦🇹🇪🇸 🇨🇭🇦🇳🇳🇪🇱', url=UPDATE_CHNL_LNK)]]
     msg = await client.send_cached_media(
         chat_id=message.from_user.id,
         file_id=file_id,
