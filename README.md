@@ -1,6 +1,5 @@
-![Hectacore]()
 
-# 🚀🤖 𝗔𝘂𝘁𝗼-𝗙𝗶𝗹𝘁𝗲𝗿-𝘃𝟳
+## 🚀🤖 𝗔𝘂𝘁𝗼-𝗙𝗶𝗹𝘁𝗲𝗿-𝘃𝟳
 
 ![Python](https://img.shields.io/badge/python-3.12-blue) 
 ![GitHub Workflow](https://img.shields.io/github/actions/workflow/status/muzxfir/Auto-Filter-v7/run-bot.yml) 
@@ -20,11 +19,10 @@
 🌐 Multi-language support  
 
 ---
-🎀 
 
 ---
 
-## 💡 𝗪𝗵𝘆 𝗔𝘂𝘁𝗼-𝗙𝗶𝗹𝘁𝗲𝗿-𝘃𝟳?
+### 💡 𝗪𝗵𝘆 𝗔𝘂𝘁𝗼-𝗙𝗶𝗹𝘁𝗲𝗿-𝘃𝟳?
 
 - Makes group file management **fast & effortless**  
 - Keeps your chat **organized automatically**  
@@ -33,7 +31,7 @@
 
 ---
 
-## 📈 𝗦𝘁𝗮𝘁𝘀 (𝗦𝗵𝗼𝘄𝗰𝗮𝘀𝗲)
+## 📈 𝗦𝘁𝗮𝘁𝘀
 
 ![Files Filtered](https://img.shields.io/badge/files-152-blue)  
 ![Active Users](https://img.shields.io/badge/users-34-green)  
