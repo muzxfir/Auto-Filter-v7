@@ -1,52 +1,66 @@
-# 🚀 Auto-Filter-v7
+## 🛠️ Tech Stack
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Python-3.12-blue?style=for-the-badge&logo=python">
-  <img src="https://img.shields.io/github/stars/muzxfir/Auto-Filter-v7?style=for-the-badge">
-  <img src="https://img.shields.io/github/forks/muzxfir/Auto-Filter-v7?style=for-the-badge">
-  <img src="https://img.shields.io/github/license/muzxfir/Auto-Filter-v7?style=for-the-badge">
-</p>
-
-<p align="center">
-  <img src="https://img.shields.io/github/actions/workflow/status/muzxfir/Auto-Filter-v7/run-bot.yml?style=for-the-badge">
-  <img src="https://img.shields.io/badge/Deploy-Koyeb-121212?style=for-the-badge&logo=koyeb">
-  <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white">
+  <img src="https://skillicons.dev/icons?i=python,mongodb,docker,git,github,vscode,linux" />
 </p>
 
 ---
 
-## ✨ Features
+## 📊 Repository Stats
 
-- 🤖 Powerful Telegram Auto Filter
-- 🔍 Instant File Search
-- 📂 Automatic File Organization
-- 🎬 Movie & Media Support
-- 🎛️ Interactive Inline Buttons
-- 👤 User & Admin Panels
-- 🌐 Multi-language Support
-- ⚡ Fast & Optimized
-- ☁️ Deploy on Koyeb, Docker & Heroku
+<p align="center">
+  <img src="https://github-readme-stats.vercel.app/api?username=muzxfir&show_icons=true&theme=tokyonight" height="170"/>
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=muzxfir&theme=tokyonight" height="170"/>
+</p>
 
 ---
 
-## 📸 Screenshots
+## 📈 Most Used Languages
 
-> Add screenshots here.
-
----
-
-## 🚀 Deploy
-
-[![Deploy on Koyeb](https://www.koyeb.com/static/images/deploy/button.svg)](YOUR_KOYEB_LINK)
+<p align="center">
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=muzxfir&layout=compact&theme=tokyonight"/>
+</p>
 
 ---
 
-## ⭐ Support
+## 👀 Visitor Counter
 
-If you like this project, please consider giving it a ⭐ on GitHub.
+<p align="center">
+  <img src="https://komarev.com/ghpvc/?username=muzxfir&label=Profile%20Views&color=0e75b6&style=for-the-badge">
+</p>
 
 ---
 
-## 📄 License
+## ⭐ Star History
 
-This project is licensed under the MIT License.
+[![Star History Chart](https://api.star-history.com/svg?repos=muzxfir/Auto-Filter-v7&type=Date)](https://star-history.com/#muzxfir/Auto-Filter-v7&Date)
+
+---
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+If you'd like to improve this project:
+
+1. Fork the repository
+2. Create a new branch
+3. Commit your changes
+4. Open a Pull Request
+
+---
+
+## 📬 Contact
+
+- GitHub: https://github.com/muzxfir
+- Telegram: https://t.me/YOUR_USERNAME
+
+---
+
+<p align="center">
+
+### ⭐ Don't forget to Star this Repository! ⭐
+
+Made with ❤️ by **MUZXFIR**
+
+</p>
