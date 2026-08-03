@@ -1,7 +1,7 @@
 # 🚀 Auto-Filter-v7
 
 <p align="center">
-  <img src="./banner.png" width="100%" alt="Auto-Filter-v7 Banner">
+  <img src="https://files.catbox.moe/jdfqxf.png" width="100%" alt="Auto-Filter-v7 Banner">
 </p>
 
 <p align="center">
