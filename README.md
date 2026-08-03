@@ -1,66 +1,149 @@
-## 🛠️ Tech Stack
+🚀 Auto-Filter-v7
 
 <p align="center">
-  <img src="https://skillicons.dev/icons?i=python,mongodb,docker,git,github,vscode,linux" />
-</p>
+  <img src="./banner.png" width="100%" alt="Auto-Filter-v7 Banner">
+</p><p align="center">"Python" (https://img.shields.io/badge/Python-3.12-blue?style=for-the-badge&logo=python)
+"Pyrogram" (https://img.shields.io/badge/Pyrogram-Latest-blue?style=for-the-badge)
+"MongoDB" (https://img.shields.io/badge/MongoDB-Database-green?style=for-the-badge&logo=mongodb)
+"Docker" (https://img.shields.io/badge/Docker-Ready-2496ED?style=for-the-badge&logo=docker)
+"License" (https://img.shields.io/github/license/muzxfir/Auto-Filter-v7?style=for-the-badge)
+"Stars" (https://img.shields.io/github/stars/muzxfir/Auto-Filter-v7?style=for-the-badge)
+"Forks" (https://img.shields.io/github/forks/muzxfir/Auto-Filter-v7?style=for-the-badge)
+
+</p>---
+
+✨ Overview
+
+Auto-Filter-v7 is a powerful Telegram Auto Filter Bot built with Python, Pyrogram, and MongoDB.
+
+It helps Telegram groups automatically search, organize, and deliver files with lightning-fast performance and interactive inline buttons.
 
 ---
 
-## 📊 Repository Stats
+✨ Features
 
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=muzxfir&show_icons=true&theme=tokyonight" height="170"/>
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=muzxfir&theme=tokyonight" height="170"/>
-</p>
-
----
-
-## 📈 Most Used Languages
-
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=muzxfir&layout=compact&theme=tokyonight"/>
-</p>
-
----
-
-## 👀 Visitor Counter
-
-<p align="center">
-  <img src="https://komarev.com/ghpvc/?username=muzxfir&label=Profile%20Views&color=0e75b6&style=for-the-badge">
-</p>
+- 🤖 Smart Auto Filter
+- 🔍 Instant File Search
+- 🎬 Movie & Media Support
+- 📂 Automatic File Organization
+- 🔘 Inline Keyboard Buttons
+- 👨‍💼 Admin Control Panel
+- 🌐 Multi-language Support
+- ⚡ Fast Response
+- ☁️ Koyeb Ready
+- 🐳 Docker Ready
+- 🔒 Secure & Stable
 
 ---
 
-## ⭐ Star History
+📸 Screenshots
 
-[![Star History Chart](https://api.star-history.com/svg?repos=muzxfir/Auto-Filter-v7&type=Date)](https://star-history.com/#muzxfir/Auto-Filter-v7&Date)
+«Add your screenshots here.»
 
----
-
-## 🤝 Contributing
-
-Contributions, issues, and feature requests are welcome!
-
-If you'd like to improve this project:
-
-1. Fork the repository
-2. Create a new branch
-3. Commit your changes
-4. Open a Pull Request
+Home| Search
+Screenshot| Screenshot
 
 ---
 
-## 📬 Contact
+🎥 Demo
 
-- GitHub: https://github.com/muzxfir
-- Telegram: https://t.me/YOUR_USERNAME
+«Add demo.gif here.»
 
 ---
 
-<p align="center">
+🛠 Tech Stack
 
-### ⭐ Don't forget to Star this Repository! ⭐
+- Python 3.12
+- Pyrogram
+- MongoDB
+- Docker
+- GitHub Actions
+- Linux
 
-Made with ❤️ by **MUZXFIR**
+---
+
+📦 Installation
+
+git clone https://github.com/muzxfir/Auto-Filter-v7.git
+
+cd Auto-Filter-v7
+
+pip install -r requirements.txt
+
+python main.py
+
+---
+
+⚙ Environment Variables
+
+API_ID=
+API_HASH=
+BOT_TOKEN=
+DATABASE_URI=
+ADMINS=
+LOG_CHANNEL=
+
+---
+
+☁ Deploy
+
+- ✅ Koyeb
+- ✅ Docker
+- ✅ Heroku
+- ✅ Railway
+
+---
+
+📂 Project Structure
+
+Auto-Filter-v7
+│
+├── bot
+├── database
+├── plugins
+├── utils
+├── main.py
+├── config.py
+└── requirements.txt
+
+---
+
+📊 Repository Stats
+
+- ⭐ GitHub Stars
+- 🍴 Forks
+- 🐞 Issues
+- 👥 Contributors
+
+---
+
+🤝 Contributing
+
+Contributions are always welcome.
+
+1. Fork this repository.
+2. Create a new branch.
+3. Commit your changes.
+4. Open a Pull Request.
+
+---
+
+📜 License
+
+This project is licensed under the MIT License.
+
+---
+
+❤️ Support
+
+If you found this project useful, please consider giving it a ⭐ on GitHub.
+
+It motivates future development and helps others discover the project.
+
+---
+
+<p align="center">⭐ Star this Repository ⭐
+
+Made with ❤️ by MUZXFIR
 
 </p>
