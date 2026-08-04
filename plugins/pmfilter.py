@@ -1978,7 +1978,10 @@ async def advantage_spell_chok(client, message):
     if not movies:
         google = search.replace(" ", "+")
         button = [
-            [InlineKeyboardButton("📥 REQUEST THIS MOVIE", callback_data="movie_request")],
+            [InlineKeyboardButton(
+    "📥 REQUEST THIS MOVIE",
+    callback_data=f"movie_request#{search}"
+            )],
             [InlineKeyboardButton("🔍 CHECK SPELLING ON GOOGLE 🔍", url=f"https://www.google.com/search?q={google}")],
         ]
         k = await message.reply_text(text=script.I_CUDNT.format(search), reply_markup=InlineKeyboardMarkup(button))
