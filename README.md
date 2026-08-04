@@ -380,3 +380,14 @@ this project.
 Made with ❤️ by **MUZXFIR**
 
 </p>
+
+## 🆕 v8 Movie Request System
+
+- `/request Movie Name` lets users submit missing movies.
+- A **Request This Movie** button appears when no matching movie is found.
+- Duplicate pending requests from the same user are blocked.
+- `/requests` gives admins a pending-request panel.
+- Admins can mark requests as **Available** or **Rejected**.
+- Users receive an automatic Telegram notification after admin action.
+
+MongoDB automatically creates and uses the `movie_requests` collection.
