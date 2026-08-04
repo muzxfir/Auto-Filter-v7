@@ -331,8 +331,10 @@ async def advantage_spoll_choker(bot, query):
                 await bot.send_message(chat_id=BIN_CHANNEL, text=script.NORSLTS.format(reqstr.id, reqstr.mention, movie))
             except Exception as e:
                 print(f"Error In Spol - {e}   Make Sure Bot Admin BIN CHANNEL")
-        btn = InlineKeyboardMarkup(
-            [[InlineKeyboardButton("🔰CLICK HERE & REQUEST TO ADMIN🔰", url=OWNER_LNK)]])
+        btn = InlineKeyboardMarkup([
+            [InlineKeyboardButton("📥 REQUEST THIS MOVIE", callback_data="movie_request")],
+            [InlineKeyboardButton("👤 CONTACT ADMIN", url=OWNER_LNK)],
+        ])
         k = await query.message.edit(script.MVE_NT_FND, reply_markup=btn)
         await asyncio.sleep(10)
         await k.delete()
@@ -1975,8 +1977,10 @@ async def advantage_spell_chok(client, message):
         return
     if not movies:
         google = search.replace(" ", "+")
-        button = [[InlineKeyboardButton(
-            "🔍 CHECK SPELLING ON GOOGLE 🔍", url=f"https://www.google.com/search?q={google}")]]
+        button = [
+            [InlineKeyboardButton("📥 REQUEST THIS MOVIE", callback_data="movie_request")],
+            [InlineKeyboardButton("🔍 CHECK SPELLING ON GOOGLE 🔍", url=f"https://www.google.com/search?q={google}")],
+        ]
         k = await message.reply_text(text=script.I_CUDNT.format(search), reply_markup=InlineKeyboardMarkup(button))
         await asyncio.sleep(60)
         await k.delete()
