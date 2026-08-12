@@ -15,7 +15,7 @@ from database.config_db import mdb
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message, ReplyKeyboardMarkup
 from pyrogram import Client, filters, enums
 from pyrogram.errors import FloodWait, ChatAdminRequired, UserNotParticipant
-from database.ia_filterdb import Media, Media2, get_file_details, unpack_new_file_id, get_bad_files
+from database.ia_filterdb import Media, Media2, get_file_details, get_search_results, unpack_new_file_id, get_bad_files
 from database.users_chats_db import db
 from info import *
 from utils import get_settings, save_group_settings, is_subscribed, is_req_subscribed, get_size, get_shortlink, is_check_admin, temp, get_readable_time, get_time, generate_settings_text, log_error, clean_filename
@@ -37,6 +37,74 @@ async def start(client, message):
             await message.react(emoji="⚡️", big=True)
     m = message
     
+
+# 🎬 Website deep-link: directly send matching movie files (no search-result page)
+    if len(message.command) == 2 and message.command[1].startswith("direct_"):
+        query = message.command[1].replace("direct_", "", 1).replace("_", " ").strip()
+        if not query:
+            return await message.reply_text("Movie request is invalid.")
+
+        # Search title + year first. If nothing is indexed with the year,
+        # retry using title only.
+        files, _, total_results = await get_search_results(
+            chat_id=message.chat.id,
+            query=query.lower(),
+            offset=0,
+            filter=True
+        )
+
+        if not files:
+            title_only = re.sub(r"\b(19|20)\d{2}\b", "", query).strip()
+            if title_only and title_only.lower() != query.lower():
+                files, _, total_results = await get_search_results(
+                    chat_id=message.chat.id,
+                    query=title_only.lower(),
+                    offset=0,
+                    filter=True
+                )
+
+        if not files:
+            return await message.reply_text(
+                f"❌ <b>{query}</b> is not available in the bot database right now."
+            )
+
+        settings = await get_settings(message.chat.id)
+        sent = 0
+
+        # Send matching indexed files directly to the user.
+        # This avoids showing the normal search/result buttons.
+        for media in files:
+            try:
+                file_name = getattr(media, "file_name", "") or ""
+                file_size = getattr(media, "file_size", 0)
+                file_caption = getattr(media, "caption", None)
+
+                if CUSTOM_FILE_CAPTION:
+                    try:
+                        caption = CUSTOM_FILE_CAPTION.format(
+                            file_name=file_name,
+                            file_size=get_size(file_size),
+                            file_caption=file_caption or ""
+                        )
+                    except Exception:
+                        caption = file_caption or file_name
+                else:
+                    caption = file_caption or file_name
+
+                await client.send_cached_media(
+                    chat_id=message.from_user.id,
+                    file_id=media.file_id,
+                    caption=caption,
+                    protect_content=settings.get("file_secure", PROTECT_CONTENT)
+                )
+                sent += 1
+            except Exception as e:
+                logger.exception(f"Website direct-send failed for {getattr(media, 'file_id', 'unknown')}: {e}")
+
+        if sent == 0:
+            await message.reply_text("❌ Matching movie was found, but the file could not be sent.")
+        return
+
 # 🔍 Custom deep-link instant search handler
     if len(message.command) == 2 and message.command[1].startswith("search_"):
         # Extract query from deep link
