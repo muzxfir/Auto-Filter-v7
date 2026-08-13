@@ -573,6 +573,104 @@ async def start(client, message):
     await k.edit_text("<b>ʏᴏᴜʀ ᴠɪᴅᴇᴏ / ꜰɪʟᴇ ɪꜱ ꜱᴜᴄᴄᴇꜱꜱꜰᴜʟʟʏ ᴅᴇʟᴇᴛᴇᴅ !!</b>")
     return
 
+
+
+# ---------------- DB movie inventory ----------------
+def _dbmovie_clean_name(file_name):
+    """Best-effort movie title/year extraction from indexed filenames."""
+    name = os.path.basename(str(file_name or ""))
+    name = re.sub(r"\.(mkv|mp4|avi|mov|wmv|flv|webm|m4v|ts|zip|rar)$", "", name, flags=re.I)
+    name = re.sub(r"[_\.]+", " ", name)
+    name = re.sub(r"\s+", " ", name).strip()
+
+    # Prefer a normal release year. Everything after it is usually quality/language/codec info.
+    ym = re.search(r"\b((?:19|20)\d{2})\b", name)
+    year = ym.group(1) if ym else ""
+    title = name[:ym.start()].strip(" -_()[]{}") if ym else name
+
+    # If there is no year, remove common release tags from the first occurrence onward.
+    if not year:
+        tag = re.search(
+            r"\b(?:2160p|1080p|720p|480p|4k|uhd|hdr|bluray|blu ray|web[- ]?dl|webrip|web rip|hdrip|dvdrip|brrip|x264|x265|h\.?264|h\.?265|hevc|aac|ddp?\s*5\.1|esub|multi audio|dual audio)\b",
+            title, re.I
+        )
+        if tag:
+            title = title[:tag.start()]
+
+    # Drop bracketed noise and trailing separators.
+    title = re.sub(r"\[[^\]]*\]", " ", title)
+    title = re.sub(r"\([^)]*(?:1080|720|480|2160|web|bluray|hdr|x26|hevc|aac)[^)]*\)", " ", title, flags=re.I)
+    title = re.sub(r"\s+", " ", title).strip(" -_()[]{}")
+    if not title:
+        title = name.strip()
+
+    # Stable key so multiple qualities/languages of one movie count once.
+    key_title = re.sub(r"[^a-z0-9]+", " ", title.lower()).strip()
+    return title, year, f"{key_title}|{year}"
+
+
+@Client.on_message(filters.private & filters.command("dbmovies") & filters.user(ADMINS))
+async def dbmovies_inventory(client, message):
+    """Admin-only: export indexed DB files as a unique movie list."""
+    status = await message.reply_text("🎬 Reading indexed database…")
+    try:
+        total_primary = await Media.count_documents({})
+        total_secondary = await Media2.count_documents({}) if MULTIPLE_DB else 0
+        total_files = total_primary + total_secondary
+
+        rows = []
+        for model, count in ((Media, total_primary), (Media2, total_secondary)):
+            if not count:
+                continue
+            docs = await model.find({}).to_list(length=count)
+            for doc in docs:
+                title, year, key = _dbmovie_clean_name(getattr(doc, "file_name", ""))
+                rows.append((key, title, year, getattr(doc, "file_name", ""), getattr(doc, "file_size", 0) or 0))
+
+        movies = {}
+        for key, title, year, filename, size in rows:
+            if not key.split("|", 1)[0]:
+                continue
+            item = movies.setdefault(key, {"title": title, "year": year, "files": 0, "bytes": 0})
+            item["files"] += 1
+            item["bytes"] += size
+
+        ordered = sorted(movies.values(), key=lambda x: (x["title"].casefold(), x["year"]))
+        stamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+        txt_path = f"/tmp/dbmovies_{stamp}.txt"
+        csv_path = f"/tmp/dbmovies_{stamp}.csv"
+
+        with open(txt_path, "w", encoding="utf-8") as f:
+            f.write(f"Total indexed files: {total_files}\n")
+            f.write(f"Unique movies/titles: {len(ordered)}\n\n")
+            for i, item in enumerate(ordered, 1):
+                label = f'{item["title"]} ({item["year"]})' if item["year"] else item["title"]
+                f.write(f'{i}. {label}  [{item["files"]} file(s)]\n')
+
+        import csv
+        with open(csv_path, "w", newline="", encoding="utf-8-sig") as f:
+            w = csv.writer(f)
+            w.writerow(["No", "Movie / Title", "Year", "Indexed Files", "Total Size Bytes"])
+            for i, item in enumerate(ordered, 1):
+                w.writerow([i, item["title"], item["year"], item["files"], item["bytes"]])
+
+        await status.edit_text(
+            f"✅ <b>Database scan complete</b>\n\n"
+            f"📦 Indexed files: <b>{total_files}</b>\n"
+            f"🎬 Unique movies/titles: <b>{len(ordered)}</b>\n\n"
+            f"Sending TXT + CSV list…"
+        )
+        await message.reply_document(txt_path, caption=f"🎬 Movie list — {len(ordered)} unique titles")
+        await message.reply_document(csv_path, caption="📊 Movie database CSV")
+        for path in (txt_path, csv_path):
+            try:
+                os.remove(path)
+            except OSError:
+                pass
+    except Exception as e:
+        logger.exception("/dbmovies failed")
+        await status.edit_text(f"❌ DB movie scan failed:\n<code>{str(e)[:3000]}</code>")
+
 @Client.on_message(filters.command('logs') & filters.user(ADMINS))
 async def log_file(bot, message):
     """Send log file"""
