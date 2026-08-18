@@ -87,23 +87,6 @@ def _make_direct_auto_caption(file_name="", file_caption=""):
     )
 
 
-def _append_auto_media_details(caption, file_name="", source_caption=""):
-    """Keep the existing CineZen caption and append only detected media details."""
-    quality, duration, language, subtitle = _detect_direct_media_info(file_name, source_caption)
-    details = []
-    if quality != "Unknown" or duration != "Unknown":
-        left = quality if quality != "Unknown" else "Quality Unknown"
-        right = duration if duration != "Unknown" else "Duration Unknown"
-        details.append(f"🎬 {left} | ⏳ {right}")
-    if language != "Unknown":
-        details.append(f"🔊 {language}")
-    if subtitle != "No Subtitle Info":
-        details.append(f"💬 {subtitle}")
-    if not details:
-        return caption
-    return f"{caption.rstrip()}\n\n" + "\n".join(details)
-
-
 @Client.on_message(filters.command("start") & filters.incoming)
 async def start(client, message):
     if EMOJI_MODE:
@@ -470,7 +453,6 @@ async def start(client, message):
                 title = clean_filename(files1.file_name)
                 size = get_size(files1.file_size)
                 f_caption = files1.caption
-                source_caption = f_caption or ""
                 settings = await get_settings(int(grp_id))
                 TGE_CAPTION = settings.get('caption', CUSTOM_FILE_CAPTION)
                 if TGE_CAPTION:
@@ -481,7 +463,6 @@ async def start(client, message):
                         f_caption = f_caption
                 if f_caption is None:
                     f_caption = f"{clean_filename(files1.file_name)}"
-                f_caption = _append_auto_media_details(f_caption, title, source_caption)
                 
                 if STREAM_MODE and not PREMIUM_STREAM_MODE:
                     
@@ -566,7 +547,6 @@ async def start(client, message):
                     f_caption=TGE_CAPTION.format(file_name= '' if title is None else title, file_size='' if size is None else size, file_caption='')
                 except:
                     return
-            f_caption = _append_auto_media_details(f_caption, title, "")
             await msg.edit_caption(
                 f_caption,
                 reply_markup=InlineKeyboardMarkup(btn)
@@ -591,7 +571,6 @@ async def start(client, message):
     title = clean_filename(files.file_name)
     size = get_size(files.file_size)
     f_caption = files.caption
-    source_caption = f_caption or ""
     settings = await get_settings(int(grp_id))            
     TGE_CAPTION = settings.get('caption', CUSTOM_FILE_CAPTION)
     if TGE_CAPTION:
@@ -603,7 +582,6 @@ async def start(client, message):
 
     if f_caption is None:
         f_caption = clean_filename(files.file_name)
-    f_caption = _append_auto_media_details(f_caption, title, source_caption)
     
     if STREAM_MODE and not PREMIUM_STREAM_MODE:
         btn = [
