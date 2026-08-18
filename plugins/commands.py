@@ -28,6 +28,65 @@ logger = logging.getLogger(__name__)
 TIMEZONE = "Asia/Kolkata"
 BATCH_FILES = {}
 
+
+def _detect_direct_media_info(file_name="", file_caption=""):
+    """Build compact media info from indexed filename/caption without changing DB schema."""
+    text = f"{file_name} {file_caption or ''}"
+
+    quality_match = re.search(r"(?i)(?<!\w)(2160p|1080p|720p|480p|360p|4k)(?!\w)", text)
+    quality = quality_match.group(1) if quality_match else "Unknown"
+    quality = "4K" if quality.lower() == "4k" else quality.lower().replace("p", "p")
+
+    # Duration can already exist in the indexed caption, e.g. 01:36:59 or 36:59.
+    duration_match = re.search(r"(?<!\d)(\d{1,2}:\d{2}:\d{2}|\d{1,3}:\d{2})(?!\d)", text)
+    duration = duration_match.group(1) if duration_match else "Unknown"
+    if duration != "Unknown" and duration.count(":") == 2:
+        h, m, s = duration.split(":")
+        duration = f"{int(h):02}:{int(m):02}:{int(s):02}"
+
+    language_patterns = [
+        (r"(?i)(?<!\w)(tagalog|filipino|tgl)(?!\w)", "TGL"),
+        (r"(?i)(?<!\w)(malayalam|mal)(?!\w)", "MAL"),
+        (r"(?i)(?<!\w)(tamil|tam)(?!\w)", "TAM"),
+        (r"(?i)(?<!\w)(telugu|tel)(?!\w)", "TEL"),
+        (r"(?i)(?<!\w)(hindi|hin)(?!\w)", "HIN"),
+        (r"(?i)(?<!\w)(english|eng)(?!\w)", "ENG"),
+        (r"(?i)(?<!\w)(kannada|kan)(?!\w)", "KAN"),
+        (r"(?i)(?<!\w)(korean|kor)(?!\w)", "KOR"),
+        (r"(?i)(?<!\w)(japanese|jpn)(?!\w)", "JPN"),
+        (r"(?i)(?<!\w)(arabic|ara)(?!\w)", "ARA"),
+    ]
+    language = "Unknown"
+    for pattern, code in language_patterns:
+        if re.search(pattern, text):
+            language = code
+            break
+
+    if re.search(r"(?i)(?<!\w)(esub|esubs|eng[ ._-]*sub(?:title)?s?|english[ ._-]*sub(?:title)?s?)(?!\w)", text):
+        subtitle = "ESUB"
+    elif re.search(r"(?i)(?<!\w)(msub|msubs|multi[ ._-]*sub(?:title)?s?)(?!\w)", text):
+        subtitle = "MSUB"
+    elif re.search(r"(?i)(?<!\w)(hsub|hsubs|hindi[ ._-]*sub(?:title)?s?)(?!\w)", text):
+        subtitle = "HSUB"
+    elif re.search(r"(?i)(?<!\w)(subbed|subtitle|subtitles)(?!\w)", text):
+        subtitle = "SUB"
+    else:
+        subtitle = "No Subtitle Info"
+
+    return quality, duration, language, subtitle
+
+
+def _make_direct_auto_caption(file_name="", file_caption=""):
+    quality, duration, language, subtitle = _detect_direct_media_info(file_name, file_caption)
+    safe_name = file_name or "File"
+    return (
+        f"<code>{safe_name}</code>\n\n"
+        f"🎬 {quality} | ⏳ {duration}\n"
+        f"🔊 {language}\n"
+        f"💬 {subtitle}"
+    )
+
+
 @Client.on_message(filters.command("start") & filters.incoming)
 async def start(client, message):
     if EMOJI_MODE:
@@ -76,20 +135,8 @@ async def start(client, message):
         for media in files:
             try:
                 file_name = getattr(media, "file_name", "") or ""
-                file_size = getattr(media, "file_size", 0)
                 file_caption = getattr(media, "caption", None)
-
-                if CUSTOM_FILE_CAPTION:
-                    try:
-                        caption = CUSTOM_FILE_CAPTION.format(
-                            file_name=file_name,
-                            file_size=get_size(file_size),
-                            file_caption=file_caption or ""
-                        )
-                    except Exception:
-                        caption = file_caption or file_name
-                else:
-                    caption = file_caption or file_name
+                caption = _make_direct_auto_caption(file_name, file_caption)
 
                 await client.send_cached_media(
                     chat_id=message.from_user.id,
